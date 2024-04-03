@@ -1,0 +1,2 @@
+<a href="{{ route('dashboard.contact.show', $r->id) }}" class="btn btn-sm btn-icon btn-light-facebook" title="{{ __('Show') }}"><i class="fas fa-eye"></i></a>
+<button class="btn btn-icon btn-light-youtube btn-sm ml-1p" onclick="confirmDelete(() => {deleteDatatableRecord('contactDatatable', {{$r->id}}, '{{route('dashboard.contact.destroy',$r->id)}}')})"  title="{{ __('Destroy') }}"><i class="fas fa-trash"></i></button>

@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: "poppins",sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+    }
+    h3 {
+        font-size: 24px;
+        line-height: 34px;
+        font-weight: 600;
+    }
+}
+.section-padding-top{
+    padding-top: 104px;
+}
+.section-margin-top{
+    margin-top: 100px;
+}
+.section-padding-bottom{
+    padding-bottom: 100px;
+}
+.section-margin-bottom{
+    margin-bottom: 100px;
+}
+.section-title{
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 54px;
+    margin: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.cover-image{
+    object-fit: cover;
+    object-position: center;
+    max-width: 100%;
+}
+
+.absolute-center{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.slanted-bg{
+    background: #000000;
+    color: #ffffff;
+    background: linear-gradient(to right bottom, #17191F, #17191F 50%, #000000 50%, #000000);
+}
+
+
+/*Container*/
+.contact-form-input{
+    border-radius: 10px;
+    background: #444444;
+    color: #ffffff;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 50px;
+}
+textarea.contact-form-input{
+    padding-top: 15px;
+}
+.contact-form-input:focus{
+    outline: none;
+}
+.input-placeholder{
+    position: relative;
+}
+.input-placeholder .placeholder{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+}
+
+.input-placeholder.textarea .placeholder{
+    transform: translate(0);
+    top: 15px;
+}
+.input-placeholder .placeholder span{
+    color: red;
+}
+
+.contact-detail-col .first-row,
+.contact-detail-col .second-row {
+    display: flex;
+}
+.contact-detail-col .first-row .left-col,
+.contact-detail-col .second-row .left-col{
+    flex-basis: 50%;
+}
+
+.section-contact .contact-detail-col .item-title{
+    margin-bottom: 27px;
+}
+.section-contact .contact-detail-col .second-row{
+    margin-top: 50px;
+}
+
+/*Footer*/
+@layer components {
+    .footer-social {
+        @apply h-[30px] w-[30px] flex justify-center items-center rounded-full bg-white text-black
+    }
+}
