@@ -12,7 +12,7 @@
     <style>
     </style>
 </head>
-<body>
+<body class="nav-fixed">
 
     @include('front.home._header')
     @include('front.home._about')

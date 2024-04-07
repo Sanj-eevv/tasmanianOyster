@@ -31,13 +31,4 @@ class ContactRepository extends BaseRepository implements ContactRepositoryInter
     }
 
 
-    public function delete(Model $modelObj): ?bool
-    {
-        if($modelObj->role->name === 'superAdmin' && auth()->user()->role->name !== 'superAdmin'){
-            abort('404');
-        }
-        return $modelObj->delete();
-    }
-
-
 }

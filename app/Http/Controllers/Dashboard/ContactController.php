@@ -13,7 +13,6 @@ class ContactController extends Controller
      public function __construct(protected ContactRepositoryInterface $contactRepository){}
 
      public function index(Request $request){
-          $p = 'adsf';
           if ($request->ajax()) {
                $columns = [
                      'full_name',

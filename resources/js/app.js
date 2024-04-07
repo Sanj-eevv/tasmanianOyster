@@ -23,4 +23,10 @@ import.meta.glob([
         }
     });
     /** contact form hide fake placeholder ends**/
+
+    // Sticky header
+    window.addEventListener('scroll', function() {
+        let scrollPosition = window.scrollY;
+        scrollPosition >= 30 ? document.body.classList.add('nav-fixed') : document.body.classList.remove('nav-fixed')
+    });
 })( $ );
