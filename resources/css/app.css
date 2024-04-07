@@ -15,18 +15,7 @@
         font-weight: 600;
     }
 }
-.section-padding-top{
-    padding-top: 104px;
-}
-.section-margin-top{
-    margin-top: 100px;
-}
-.section-padding-bottom{
-    padding-bottom: 100px;
-}
-.section-margin-bottom{
-    margin-bottom: 100px;
-}
+
 .section-title{
     font-size: 36px;
     font-weight: 700;
@@ -132,6 +121,18 @@ textarea.contact-form-input{
 
 /*Footer*/
 @layer components {
+    .section-margin-top{
+        @apply mt-[50px] sm:mt-[100px];
+    }
+    .section-margin-bottom{
+        @apply mb-[50px] sm:mb-[100px];
+    }
+    .section-padding-top{
+        @apply pt-[50px] sm:pt-[100px];
+    }
+    .section-padding-bottom{
+        @apply pb-[50px] sm:pb-[100px];
+    }
     .footer-social {
         @apply h-[30px] w-[30px] flex justify-center items-center rounded-full bg-white text-black
     }

@@ -1,8 +1,8 @@
 <header class="{{$transparentHeader ? 'bg-black/60': 'bg-black' }} nav-container text-white">
-    <div class="flex items-center justify-between container  h-[100px]">
+    <div class="flex items-center justify-between container h-[80px] sm:h-[100px]">
         <a href="{{route('front.index')}}">
             <img
-                    class="h-[80px] w-[100px] lg:h-[94px] lg:w-[113px] bg-center bg-cover"
+                    class="h-[65px] w-[65px] sm:h-[85px] sm:w-[85px] bg-center bg-cover"
                     src="{{ asset("storage/uploads/settings/".config('app.settings.app_logo')) }}" alt="logo">
         </a>
         <nav class="hidden md:block">

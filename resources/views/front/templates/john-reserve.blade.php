@@ -4,8 +4,14 @@
         #john_hero_video{
             object-fit: initial;
             width: 100%;
-            min-height: calc(min(1000px,100vh) - 100px);
-            max-height: 1000px;
+            min-height: calc(100vh - 80px);
+            max-height: 100vh;
+        }
+        @media (min-width: 640px) {
+            #john_hero_video{
+                min-height: calc(min(1000px,100vh) - 100px);
+                max-height: 1000px;
+            }
         }
     </style>
 @endpush
@@ -31,24 +37,24 @@
             Your browser does not support the video tag.
         </video>
     </div>
-    <div class="h-[600px] w-full">
+    <div class="h-[400px] sm:h[600px] w-full">
         <img src="{{Vite::asset('resources/images/front/john2.webp')}}" alt="john reserve" class="cover-image h-full w-full">
     </div>
     <div class="bg-black">
-        <div class="container john-info-section text-white">
-                <div class="flex gap-[60px] mb-[60px] relative -top-[70px]">
-                    <div class="basis-1/2">
+        <div class="container john-info-section text-white pt-[60px]">
+                <div class="flex gap-[60px] mb-[60px] relative  flex-col md:flex-row" data-aos="fade-right" data-aos-duration="2000">
+                    <div class="sm:basis-1/2">
                         <img src="{{Vite::asset('resources/images/front/john-info.png')}}" alt="john info one" class="h-[400px] cover-image w-full">
                     </div>
-                    <div class="basis-1/2 flex items-end">
+                    <div class="sm:basis-1/2 flex items-center">
                         <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500.</p>
                     </div>
                 </div>
-                <div class="flex gap-[60px] flex-row-reverse">
-                    <div class="basis-1/2">
+                <div class="flex gap-[60px] pb-[60px] flex-col md:flex-row-reverse" data-aos="fade-left" data-aos-duration="2000">
+                    <div class="sm:basis-1/2">
                         <img src="{{Vite::asset('resources/images/front/john-info-2.png')}}" alt="john info two"  class="h-[400px] cover-image w-full">
                     </div>
-                    <div class="basis-1/2 flex items-center">
+                    <div class="sm:basis-1/2 flex items-center">
                         <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500.</p>
                     </div>
                 </div>
