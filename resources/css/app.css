@@ -46,6 +46,10 @@
     top: 50%;
     transform: translate(-50%, -50%);
 }
+.absolute-center-vertical{
+    top: 50%;
+    transform: translate(0,-50%);
+}
 .slanted-bg{
     background: #000000;
     color: #ffffff;
@@ -130,5 +134,35 @@ textarea.contact-form-input{
 @layer components {
     .footer-social {
         @apply h-[30px] w-[30px] flex justify-center items-center rounded-full bg-white text-black
+    }
+    .hero-title{
+        @apply uppercase text-4xl sm:text-5xl md:text-6xl mb-4 font-bold tracking-wider text-white
+    }
+    .hero-subtitle{
+        @apply uppercase text-2xl font-medium tracking-wider text-white
+    }
+}
+
+/*John Reserve Discover*/
+.discover-icon{
+    animation: discover 2s linear infinite;
+}
+@keyframes discover {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    10% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    90% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(10px);
+        opacity: 0;
     }
 }

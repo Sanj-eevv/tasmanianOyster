@@ -79,7 +79,7 @@ class SettingSeeder extends Seeder
               ],
               [
                    'key_name'   => 'app_logo',
-                   'key_value'  => 'logo.png',
+                   'key_value'  => 'logo.webp',
                    'created_at' => now(),
                    'updated_at' => now()
               ],

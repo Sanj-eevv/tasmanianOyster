@@ -10,13 +10,10 @@
     @include('layouts.front._partials._head')
     @yield('styles')
     @stack('styles')
-    <!-- Styles -->
-    <style>
-    </style>
 </head>
-<body class="nav-fixed min-h-screen flex flex-col justify-between">
-@include('layouts.front._partials._header')
-<div class="main">
+<body class="{{!empty($transparentHeader) ? 'nav-fixed' : ''}} min-h-screen flex flex-col">
+@include('layouts.front._partials._header', ['transparentHeader' => !empty($transparentHeader)])
+<div class="main flex-1">
 @yield('content')
 </div>
 @include('layouts.front._partials._footer')

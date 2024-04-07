@@ -1,1 +1,76 @@
 @extends('layouts.front.index')
+@push('styles')
+    <style>
+        #john_hero_video{
+            object-fit: initial;
+            width: 100%;
+            min-height: calc(min(1000px,100vh) - 100px);
+            max-height: 1000px;
+        }
+    </style>
+@endpush
+@section('content')
+    <div class="john-hero-section relative">
+        <div class="container">
+            <div class="absolute absolute-center-vertical">
+                <div class="min-h-[60px]">
+                    <h1 class="hero-title" id="john_title"></h1>
+                </div>
+                <h2 class="hero-subtitle" id="john_subtitle"></h2>
+            </div>
+            <div class="absolute text-white left-1/2 bottom-0 -translate-x-1/2">
+                <span class="uppercase text-center text-base">Scroll to discover</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mt-2 mb-1 discover-icon mx-auto">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+                </svg>
+            </div>
+
+        </div>
+        <video id="john_hero_video" autoplay loop muted>
+            <source src="https://video.wixstatic.com/video/508bbd_8c41e81b772b4fd3a6ef1c44119a58d7/720p/mp4/file.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="h-[600px] w-full">
+        <img src="{{Vite::asset('resources/images/front/john2.webp')}}" alt="john reserve" class="cover-image h-full w-full">
+    </div>
+    <div class="bg-black">
+        <div class="container john-info-section text-white">
+                <div class="flex gap-[60px] mb-[60px] relative -top-[70px]">
+                    <div class="basis-1/2">
+                        <img src="{{Vite::asset('resources/images/front/john-info.png')}}" alt="john info one" class="h-[400px] cover-image w-full">
+                    </div>
+                    <div class="basis-1/2 flex items-end">
+                        <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500.</p>
+                    </div>
+                </div>
+                <div class="flex gap-[60px] flex-row-reverse">
+                    <div class="basis-1/2">
+                        <img src="{{Vite::asset('resources/images/front/john-info-2.png')}}" alt="john info two"  class="h-[400px] cover-image w-full">
+                    </div>
+                    <div class="basis-1/2 flex items-center">
+                        <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500.</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+@endsection
+@push('scripts')
+    <script>
+        $(document).ready(function (){
+            new Typed('#john_title', {
+                strings: ['John\'s Reserve.'],
+                typeSpeed: 100,
+                showCursor: false,
+                loop: true,
+                backDelay: 1700,
+            });
+            new Typed('#john_subtitle', {
+                strings: ['Read the story'],
+                typeSpeed: 100,
+                showCursor: false,
+                loop: false,
+            });
+        })
+    </script>
+@endpush

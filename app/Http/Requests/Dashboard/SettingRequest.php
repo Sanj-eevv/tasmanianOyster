@@ -28,7 +28,7 @@ class SettingRequest extends FormRequest
               'twitter_url'     => ['nullable', 'string', 'max:191'],
               'linkedin_url'    => ['nullable', 'string', 'max:191'],
               'map_iframe'      => ['nullable', 'string'],
-              'app_logo'        => ['required_without:app_logo_old', 'image', 'mimes:jpeg,png,jpg,svg', 'max:2048'],
+              'app_logo'        => ['required_without:app_logo_old', 'image', 'mimes:jpeg,png,jpg,svg,webp', 'max:2048'],
          ];
     }
 }

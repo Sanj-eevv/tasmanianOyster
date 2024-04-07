@@ -6,6 +6,8 @@
 #kt_preview_img{
     width: 130px;
     height: 130px;
+    object-position: center;
+    object-fit: cover;
 }
 .kt_preview_image_close{
     background-color: rgba(0,0,0,.5);

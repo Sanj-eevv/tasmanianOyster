@@ -1,4 +1,4 @@
-@extends('layouts.front.index')
+@extends('layouts.front.index', ['transparentHeader' => true])
 @section('title', config('app.name'). '- Home')
 @section('content')
     @include('front.home._header')
