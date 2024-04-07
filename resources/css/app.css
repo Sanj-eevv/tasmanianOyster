@@ -53,6 +53,29 @@
 }
 
 
+/*Header*/
+body.nav-fixed .nav-container{
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/*Submenu*/
+.sub-menu li:not(:last-child){
+    border-bottom: 1px solid hsla(0,0%,100%,.1);
+}
+.parent-menu:hover .sub-menu{
+    display: block;
+}
+.parent-menu:hover .sub-menu ul li:first-of-type{
+    border-radius: 10px 10px 0 0;
+}
+.parent-menu:hover .sub-menu ul li:last-of-type{
+    border-radius: 0 0 10px 10px;
+}
+
 /*Contact*/
 .contact-form-input{
     border-radius: 10px;
@@ -101,29 +124,6 @@ textarea.contact-form-input{
 }
 .section-contact .contact-detail-col .second-row{
     margin-top: 50px;
-}
-
-/*Header*/
-body.nav-fixed .nav-container{
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-}
-
-/*Submenu*/
-.sub-menu li:not(:last-child){
-    border-bottom: 1px solid hsla(0,0%,100%,.1);
-}
-.parent-menu:hover .sub-menu{
-    display: block;
-}
-.parent-menu:hover .sub-menu ul li:first-of-type{
-    border-radius: 10px 10px 0 0;
-}
-.parent-menu:hover .sub-menu ul li:last-of-type{
-    border-radius: 0 0 10px 10px;
 }
 
 /*Footer*/

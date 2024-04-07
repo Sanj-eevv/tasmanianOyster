@@ -5,6 +5,7 @@ use App\Http\Controllers\Dashboard\SettingController;
 use App\Http\Controllers\Front\ContactController as FrontContactController;
 use App\Http\Controllers\Dashboard\ContactController;
 use App\Http\Controllers\Front\FrontController;
+use App\Http\Controllers\Front\JohnReserveController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -22,4 +23,6 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'au
 
 Route::group(['prefix' => 'front', 'as' => 'front.'], function(){
      Route::post('contacts', [FrontContactController::class, 'store'])->name('contact.store');
+     Route::get('john-reserve', [JohnReserveController::class, 'index'])->name('john-reserve.index');
+
 });

@@ -1,4 +1,4 @@
-<footer class="bg-black text-white pt-[50px]">
+<footer class="bg-black text-white pt-[50px] w-full">
     <div class="border-b mx-4 pb-[20px]">
         <div class="container">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
