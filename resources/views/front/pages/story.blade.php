@@ -29,13 +29,15 @@
     </style>
 @endpush
 @section('content')
-    <div class="h-[400px] sm:h-[600px] w-full" data-aos="fade-up" data-aos-duration="2000">
-        <img src="{{Vite::asset('resources/images/front/story.png')}}" alt="Story" class="cover-image h-full w-full">
+    <div class="bg-black">
+        <div class="h-[400px] sm:h-[600px] w-full" data-aos="fade-up" data-aos-duration="2000">
+            <img src="{{Vite::asset('resources/images/front/story.png')}}" alt="Story" class="cover-image h-full w-full">
+        </div>
     </div>
     <div class="story-section bg-black py-12">
         <div class="container">
-            <h1 class="section-title text-white text-center !pt-0 !pb-2">{{config('app.name')}}</h1>
-            <h2 class="hero-subtitle text-center">A BRIEF HISTORY</h2>
+            <h1 class="section-title text-white text-center !pt-0 !pb-2" data-aos="fade-up" data-aos-duration="1500">{{config('app.name')}}</h1>
+            <h2 class="hero-subtitle text-center" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="60px">A BRIEF HISTORY</h2>
             <div class="timeline">
                 <div class="mx-auto w-full h-full">
                     <div class="relative wrap overflow-hidden p-10 h-full">
@@ -91,7 +93,7 @@
                 </div>
             </div>
             <div class="how-we-process-section text-white">
-                <h2 class="section-title text-center">Our Oysters Journey</h2>
+                <h2 class="section-title text-center" data-aos="fade-up" data-aos-duration="1800">Our Oysters Journey</h2>
                 <div class="flex how-we-process-container relative right">
                     <div class="how-we-process relative inline-block p-4 rounded-lg bg-gray-800 w-[360px]">
                         <span class="font-bold text-lg">01.</span>

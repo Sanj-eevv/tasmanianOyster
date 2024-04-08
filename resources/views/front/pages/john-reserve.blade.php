@@ -37,8 +37,10 @@
             Your browser does not support the video tag.
         </video>
     </div>
-    <div class="h-[400px] sm:h[600px] w-full" data-aos="fade-up" data-aos-duration="2000">
-        <img src="{{Vite::asset('resources/images/front/john2.webp')}}" alt="john reserve" class="cover-image h-full w-full">
+    <div class="bg-black">
+        <div class="h-[400px] sm:h[600px] w-full" data-aos="fade-up" data-aos-duration="2000">
+            <img src="{{Vite::asset('resources/images/front/john2.webp')}}" alt="john reserve" class="cover-image h-full w-full">
+        </div>
     </div>
     <div class="bg-black overflow-x-hidden">
         <div class="container john-info-section text-white pt-[60px]">
