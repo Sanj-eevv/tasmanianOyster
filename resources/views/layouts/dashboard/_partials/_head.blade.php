@@ -1,5 +1,3 @@
-<base href=""/>
-<title>@yield('title', config('app.name'))</title>
 <meta charset="utf-8" />
 <meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Flask & Laravel versions. Grab your copy now and get life-time updates for free." />
 <meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Flask & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
@@ -10,19 +8,19 @@
 <meta property="og:url" content="{{config('app.url')}}" />
 <meta property="og:site_name" content="{{config('app.name')}}" />
 <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-<link rel="shortcut icon" href="{{Vite::asset('resources/js/dashboard/assets/media/logos/favicon.ico')}}" />
+<link rel="shortcut icon" href="{{Vite::asset('resources/images/shared/fav.png')}}" />
 <!--begin::Fonts(mandatory for all pages)-->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
 <!--end::Fonts-->
 <!--begin::Vendor Stylesheets(used for this page only)-->
-<link href="{{Vite::asset('resources/js/dashboard/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset('asset/js/dashboard/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css')}}" rel="stylesheet" type="text/css" />
 <!--end::Vendor Stylesheets-->
 <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
-<link href="{{Vite::asset('resources/js/dashboard/assets/plugins/custom/toastr/build/toastr.css')}}" rel="stylesheet" type="text/css"/>
-<link href="{{Vite::asset('resources/js/dashboard/assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
-<link href="{{Vite::asset('resources/js/dashboard/assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
-<link href="{{Vite::asset('resources/js/dashboard/assets/plugins/custom/datatable/datatable.bundle.css')}}" rel="stylesheet" type="text/css"/>
-<link href="{{Vite::asset('resources/css/dashboard/dashboard.custom.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset('asset/js/dashboard/assets/plugins/custom/toastr/build/toastr.css')}}" rel="stylesheet" type="text/css"/>
+<link href="{{asset('asset/js/dashboard/assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset('asset/js/dashboard/assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset('asset/js/dashboard/assets/plugins/custom/datatable/datatable.bundle.css')}}" rel="stylesheet" type="text/css"/>
+<link href="{{asset('asset/css/dashboard/dashboard.custom.css')}}" rel="stylesheet" type="text/css" />
 @yield('styles')
 @stack('styles')
 <!--end::Global Stylesheets Bundle-->

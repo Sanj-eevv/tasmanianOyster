@@ -1,7 +1,7 @@
-<script src="{{Vite::asset('resources/js/shared/jQuery.min.js')}}"></script>
-<script src="{{Vite::asset('resources/js/front/aos/aos.js')}}"></script>
-<script src="{{Vite::asset('resources/js/front/toastr.min.js')}}"></script>
-<script src="{{Vite::asset('resources/js/front/typed/typed.umd.js')}}"></script>
+<script src="{{asset('asset/js/shared/jQuery.min.js')}}?version={{config('app.asset_version')}}"></script>
+<script src="{{asset('asset/js/front/aos/aos.js')}}?version={{config('app.asset_version')}}"></script>
+<script src="{{asset('asset/js/front/toastr.min.js')}}?version={{config('app.asset_version')}}"></script>
+<script src="{{asset('asset/js/front/typed/typed.umd.js')}}?version={{config('app.asset_version')}}"></script>
 <script>
     AOS.init();
 </script>

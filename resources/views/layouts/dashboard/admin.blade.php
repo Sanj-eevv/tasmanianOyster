@@ -2,6 +2,7 @@
 <html lang="en">
 <!--begin::Head-->
 <head>
+    <title>@yield('title', config('app.name'))</title>
     @include('layouts.dashboard._partials._head')
 </head>
 <!--end::Head-->

@@ -3,9 +3,9 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 
-class JohnReserveController extends Controller
+class StoryController extends Controller
 {
      public function index(){
-          return view('front.pages.john-reserve');
+          return view('front.pages.story');
      }
 }

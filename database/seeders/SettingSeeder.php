@@ -13,7 +13,7 @@ class SettingSeeder extends Seeder
          Setting::query()->upsert([
               [
                    'key_name'   => 'app_name',
-                   'key_value'  => config('app.name'),
+                   'key_value'  => 'Tasmanian Oyster Co.',
                    'created_at' => now(),
                    'updated_at' => now()
               ],
@@ -79,10 +79,11 @@ class SettingSeeder extends Seeder
               ],
               [
                    'key_name'   => 'app_logo',
-                   'key_value'  => 'logo.webp',
+                   'key_value'  => 'logo.png',
                    'created_at' => now(),
                    'updated_at' => now()
               ],
          ], ['key_name'], ['key_value', 'created_at', 'updated_at']);
+         Setting::updateCachedSettingsData();
     }
 }

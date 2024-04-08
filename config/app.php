@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Tasmanian Oyster Co.'),
 
     /*
     |--------------------------------------------------------------------------
@@ -128,5 +128,6 @@ return [
           'name'     => env('ADMIN_NAME', 'admin'),
           'email'    => env('ADMIN_EMAIL', 'admin@admin.com'),
           'password' => env('ADMIN_PASSWORD', 'password'),
-     ]
+     ],
+     'asset_version' => env('ASSET_VERSION', '1.0'),
 ];

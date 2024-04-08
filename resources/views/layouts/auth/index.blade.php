@@ -2,6 +2,7 @@
 <html lang="en">
 <!--begin::Head-->
 <head>
+    <title>@yield('title', config('app.name'))</title>
     @include('layouts.auth._partials._head')
 </head>
 <!--end::Head-->
@@ -13,7 +14,7 @@
 <!--begin::Root-->
 <div class="d-flex flex-column flex-root" id="kt_app_root">
     <!--begin::Page bg image-->
-    <style>body { background-image: url('{{Vite::asset('resources/js/dashboard/assets/media/auth/bg4.jpg')}}'); } [data-theme="dark"] body { background-image: url('{{Vite::asset('resources/js/dashboard/assets/media/auth/bg4-dark.jpg')}}'); }</style>
+    <style>body { background-image: url('{{Vite::asset('resources/images/dashboard/auth-bg.jpg')}}'); } [data-theme="dark"] body { background-image: url('{{Vite::asset('resources/js/dashboard/assets/media/auth/bg4-dark.jpg')}}'); }</style>
     <!--end::Page bg image-->
     <!--begin::Authentication - Sign-in -->
     <div class="d-flex flex-column flex-column-fluid flex-lg-row">
