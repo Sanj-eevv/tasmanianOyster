@@ -7,6 +7,7 @@ use App\Http\Controllers\Dashboard\ContactController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\JohnReserveController;
 use App\Http\Controllers\Front\StoryController;
+use \App\Http\Controllers\Dashboard\StoryController as DashboardStoryController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,6 +20,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'au
      Route::get('contacts/{contact}', [ContactController::class, 'show'])->name('contact.show');
      Route::delete('contacts/{contact}', [ContactController::class, 'destroy'])->name('contact.destroy');
      Route::resource('settings', SettingController::class)->only('index', 'store');
+     Route::resource('stories', DashboardStoryController::class);
 
 });
 

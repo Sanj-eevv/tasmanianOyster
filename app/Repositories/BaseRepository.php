@@ -40,7 +40,7 @@ class BaseRepository implements BaseRepositoryInterface
 
      public function update(array $input, Model $modelObj) : Model
      {
-          $modelObj->query()->update($input);
+          $modelObj->update($input);
           return $modelObj;
      }
 

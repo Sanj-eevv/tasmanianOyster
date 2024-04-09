@@ -8,6 +8,9 @@
         $('#kt_preview_img').attr('src', '');
     });
 
+    autosize(document.querySelectorAll('textarea'));
+
+
 })( $ );
 
 function loadPreview(input, id) {

@@ -1,13 +1,12 @@
 <?php
+declare(strict_types = 1);
 
 namespace App\Repositories;
 
 use App\Interfaces\ContactRepositoryInterface;
 
 use App\Models\Front\Contact;
-use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
+
 
 class ContactRepository extends BaseRepository implements ContactRepositoryInterface
 {
@@ -20,7 +19,7 @@ class ContactRepository extends BaseRepository implements ContactRepositoryInter
 
     public function paginatedWithQuery(array $meta, $query = null ): array
     {
-        $query = Contact::query()
+        $query = $this->model::query()
              ->select('id', 'full_name', 'phone_number', 'email', 'created_at')
              ->where('full_name', 'like', $meta['search'] . '%')
              ->orWhere('phone_number', 'like', $meta['search'] . '%')

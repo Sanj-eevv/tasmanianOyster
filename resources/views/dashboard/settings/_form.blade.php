@@ -15,7 +15,7 @@
 <div class="row g-9 mb-8">
     <!--begin::Col-->
     <div class="col-md-12 fv-row">
-        <label class="required form-label" for="company_email">Comoany Email</label>
+        <label class="required form-label" for="company_email">Company Email</label>
         <input id="company_email" type="text" name="company_email" class="form-control mb-2 @error('company_email') is-invalid @enderror" value="{{ old('company_email', $all_settings['company_email']) }}" />
         @error('company_email')
         <span class="invalid-feedback" role="alert">
