@@ -27,7 +27,7 @@ class StoryRequest extends FormRequest
                    Rule::unique('stories')->ignore($request->route('story')),
               ],
               'title'       => ['required', 'string', 'max:191'],
-              'description' => ['required', 'string', 'max:255'],
+              'description' => ['required', 'string', 'min:100', 'max:255'],
          ];
     }
 
