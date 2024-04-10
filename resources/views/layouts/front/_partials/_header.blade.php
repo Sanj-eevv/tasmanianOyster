@@ -3,7 +3,7 @@
         <a href="{{route('front.index')}}">
             <img
                     class="h-[65px] w-[65px] sm:h-[85px] sm:w-[85px] bg-center bg-cover"
-                    src="{{ asset("storage/uploads/settings/".config('app.settings.app_logo')) }}" alt="logo">
+                    src="{{ asset("storage/uploads/".config('app.settings.app_logo')) }}" alt="logo">
         </a>
         <nav class="hidden md:block">
             <ul class="flex items-center text-sm md:gap-x-6 lg:gap-x-8 tracking-wide">
@@ -12,12 +12,9 @@
                     <a href="{{route('front.john-reserve.index')}}" class="font-medium pb-[10px]">JON'S RESERVE</a>
                     <div class="sub-menu hidden absolute min-w-[210px] top-[30px] z-20">
                         <ul>
-                            <li class="py-[8px] px-[20px] hover:bg-white bg-black/60 hover:text-black duration-300 ease-linear"><a href="#" class="whitespace-nowrap first-of-type:rounded-t-lg text-sm font-medium">Boomer Bay</a> </li>
-                            <li class="py-[8px] px-[20px] hover:bg-white bg-black/60 hover:text-black duration-300 ease-linear"><a href="#" class="whitespace-nowrap first-of-type:rounded-t-lg text-sm font-medium">Duck Bay</a> </li>
-                            <li class="py-[8px] px-[20px] hover:bg-white bg-black/60 hover:text-black duration-300 ease-linear"><a href="#" class="whitespace-nowrap first-of-type:rounded-t-lg text-sm font-medium">Pipeclay Bay</a> </li>
-                            <li class="py-[8px] px-[20px] hover:bg-white bg-black/60 hover:text-black duration-300 ease-linear"><a href="#" class="whitespace-nowrap first-of-type:rounded-t-lg text-sm font-medium">Boomer Bay</a> </li>
-                            <li class="py-[8px] px-[20px] hover:bg-white bg-black/60 hover:text-black duration-300 ease-linear"><a href="#" class="whitespace-nowrap first-of-type:rounded-t-lg text-sm font-medium">Pittwater</a></li>
-                            <li class="py-[8px] px-[20px] hover:bg-white bg-black/60 hover:text-black duration-300 ease-linear"><a href="#" class="whitespace-nowrap first-of-type:rounded-t-lg text-sm font-medium">Exlcusive Suppliers</a></li>
+                            @foreach($GLOBAL_JOHN_RESERVES_MENU as $johnReserveMenuSlug => $johnReserveMenuTitle)
+                                <li class="py-[8px] px-[20px] hover:bg-white bg-black/60 hover:text-black duration-300 ease-linear"><a href="{{route('front.john-reserve.details', $johnReserveMenuSlug)}}" class="whitespace-nowrap first-of-type:rounded-t-lg text-sm font-medium capitalize">{{$johnReserveMenuTitle}}</a> </li>
+                            @endforeach
                         </ul>
                     </div>
                 </li>

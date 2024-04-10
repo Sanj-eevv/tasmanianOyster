@@ -24,7 +24,7 @@
             <div class="d-flex flex-center flex-lg-start flex-column">
                 <!--begin::Logo-->
                 <a href="{{route('front.index')}}" class="mb-7">
-                    <img alt="Logo" class="auth-logo" src="{{asset("storage/uploads/settings/".config('app.settings.app_logo'))}}" />
+                    <img alt="Logo" class="auth-logo" src="{{asset("storage/uploads/".config('app.settings.app_logo'))}}" />
                 </a>
                 <!--end::Logo-->
                 <!--begin::Title-->

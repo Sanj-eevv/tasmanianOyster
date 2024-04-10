@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace Database\Seeders;
 
@@ -79,7 +80,7 @@ class SettingSeeder extends Seeder
               ],
               [
                    'key_name'   => 'app_logo',
-                   'key_value'  => 'logo.png',
+                   'key_value'  => 'settings/logo.png',
                    'created_at' => now(),
                    'updated_at' => now()
               ],

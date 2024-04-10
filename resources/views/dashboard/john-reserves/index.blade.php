@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.admin')
-@section('title', 'Story')
+@section('title', 'John Reserve')
 @section('breadcrumb')
     @include('layouts.dashboard._partials._breadcrumb')
 @endsection
@@ -8,7 +8,7 @@
         <!--begin::Card header-->
         <div class="card-header">
             <div class="card-title">
-                <h2>Story</h2>
+                <h2>John Reserve</h2>
             </div>
             <!--begin::Card toolbar-->
             <div class="card-toolbar">
@@ -17,7 +17,7 @@
                     <a href="{{route('dashboard.index')}}" class="btn btn-light-dark btn-sm me-2">
                         Back
                     </a>
-                    <a href="{{route('dashboard.stories.create')}}" class="btn btn-light-primary btn-sm">
+                    <a href="{{route('dashboard.john-reserve.create')}}" class="btn btn-light-primary btn-sm">
                         Add
                     </a>
                 </div>
@@ -34,11 +34,10 @@
                 </label>
             </div>
             <div class="table-responsive">
-                <table class="table table-row-bordered gy-5" id="storiesDatatable">
+                <table class="table table-row-bordered gy-5" id="johnReserveDatatable">
                     <thead>
                     <tr class="fw-semibold fs-6 text-muted">
                         <th>Id</th>
-                        <th>Year</th>
                         <th>Title</th>
                         <th>Created At</th>
                         <th>Action</th>
@@ -55,10 +54,10 @@
 @section('scripts')
     <script>
         $( document ).ready(function( $ ) {
-            let table = $('#storiesDatatable').DataTable({
+            let table = $('#johnReserveDatatable').DataTable({
                 "serverSide": true,
                 "ajax": {
-                    "url": "{{route('dashboard.stories.index')}}",
+                    "url": "{{route('dashboard.john-reserve.index')}}",
                     "dataType":"json",
                     "type":"GET",
                     "data":{"_token":CSRF_TOKEN},
@@ -80,7 +79,6 @@
                 },
                 "columns":[
                     {"data":"id"},
-                    {"data":"year"},
                     {"data": "title"},
                     {"data":"created_at"},
                     {"data":"action","searchable":false,"orderable":false}

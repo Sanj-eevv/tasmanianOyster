@@ -71,7 +71,7 @@
                         }
                         let obj = JSON.parse(xhr.responseText);
                         if(obj.message){
-                            toastr.success(obj.message)
+                            toastr.error(obj.message)
                         }
                     },
                 },

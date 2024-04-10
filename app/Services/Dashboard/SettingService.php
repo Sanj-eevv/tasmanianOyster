@@ -84,10 +84,10 @@ class SettingService
      {
           $currentAppLogo = $this->settingRepository->get('app_logo');
           if(empty($newAppLogo)){return $currentAppLogo;}
-          Storage::delete('public/uploads/settings/'.$currentAppLogo);
+          Storage::delete("public/uploads/$currentAppLogo");
           $imageName = renameImageFileUpload($newAppLogo);
           $newAppLogo->storeAs('public/uploads/settings', $imageName);
-          return $imageName;
+          return "settings/$imageName";
      }
 
 }

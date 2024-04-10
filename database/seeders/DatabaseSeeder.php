@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace Database\Seeders;
 
@@ -15,6 +16,7 @@ class DatabaseSeeder extends Seeder
               UserSeeder::class,
               SettingSeeder::class,
               StorySeeder::class,
+              JohnReserveSeeder::class,
          ]);
     }
 }

@@ -165,7 +165,7 @@
         <input type="file" name="app_logo" onchange="loadPreview(this);"
                class="form-control form-control-solid @error('app_logo') is-invalid @enderror" id="app_logo"/>
         <div class="kt_preview_image_container {{(empty($all_settings['app_logo'])) ? 'd-none' : ''}}">
-            <img  alt="logo" id="kt_preview_img" src="{{(empty($all_settings['app_logo']))?'': asset('storage/uploads/settings/'.$all_settings['app_logo'])}}"
+            <img  alt="logo" id="kt_preview_img" src="{{(empty($all_settings['app_logo']))?'': asset('storage/uploads/'.$all_settings['app_logo'])}}"
                  class="img-fluid"/>
            {{--  <a href="javascript:void(0)" class="kt_preview_image_close"><i class="fas fa-times"></i></a> --}}
         </div>

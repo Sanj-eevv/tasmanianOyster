@@ -7,7 +7,7 @@
                     <span class="block font-extralight mt-3">{{config('app.settings.company_email')}}</span>
                 </div>
                 <div>
-                    <img src="{{asset("storage/uploads/settings/".config('app.settings.app_logo'))}}" alt="logo"
+                    <img src="{{asset("storage/uploads/".config('app.settings.app_logo'))}}" alt="logo"
                          class="h-[130px] w-[130px] cover-image">
                 </div>
                 <div class="flex gap-8">

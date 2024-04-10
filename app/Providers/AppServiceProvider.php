@@ -1,11 +1,16 @@
 <?php
+declare(strict_types  = 1);
 
 namespace App\Providers;
 
+use App\Models\JohnReserve;
 use App\Models\Setting;
+use App\Observers\Dashboard\JohnReserveObserver;
 use App\Observers\Dashboard\SettingObserver;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -44,6 +49,15 @@ class AppServiceProvider extends ServiceProvider
                    ]);
               }
          }
+         $GLOBAL_JOHN_RESERVES_MENU = collect([]);
+         if (Schema::hasTable('john_reserves')) {
+              $GLOBAL_JOHN_RESERVES_MENU = Cache::remember('johnReserve', 60 * 60, function(){
+                   /*TODO:: Create ACTIVE Scope*/
+                    return JohnReserve::where('is_active', 1)->pluck('title', 'slug')->toArray();
+              });
+         }
+         View::share('GLOBAL_JOHN_RESERVES_MENU', $GLOBAL_JOHN_RESERVES_MENU);
          Setting::observe(SettingObserver::class);
+         JohnReserve::observe(JohnReserveObserver::class);
     }
 }

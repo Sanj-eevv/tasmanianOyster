@@ -3,8 +3,8 @@
     <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
         <!--begin::Logo image-->
         <a href="{{route('front.index')}}">
-            <img alt="Logo" src="{{asset("storage/uploads/settings/".config('app.settings.app_logo'))}}" class="h-25px app-sidebar-logo-default" />
-            <img alt="Logo" src="{{asset("storage/uploads/settings/".config('app.settings.app_logo'))}}" class="h-20px app-sidebar-logo-minimize" />
+            <img alt="Logo" src="{{asset("storage/uploads/".config('app.settings.app_logo'))}}" class="h-25px app-sidebar-logo-default" />
+            <img alt="Logo" src="{{asset("storage/uploads/".config('app.settings.app_logo'))}}" class="h-20px app-sidebar-logo-minimize" />
         </a>
         <!--end::Logo image-->
         <!--begin::Sidebar toggle-->
@@ -64,6 +64,19 @@
                             <i class="fas fa-address-book"></i>
                         </span>
                         <span class="menu-title">Contacts</span>
+                    </a>
+                    <!--end:Menu link-->
+                </div>
+                <!--end:Menu item-->
+
+                <!--begin:Menu item-->
+                <div class="menu-item">
+                    <!--begin:Menu link-->
+                    <a class="menu-link {{current_page('john-reserve') ? 'active' : '' }}" href="{{ route('dashboard.john-reserve.index') }}">
+                         <span class="menu-icon">
+                            <i class="fas fa-user-secret"></i>
+                        </span>
+                        <span class="menu-title">John Reserve</span>
                     </a>
                     <!--end:Menu link-->
                 </div>

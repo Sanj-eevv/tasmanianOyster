@@ -61,7 +61,7 @@
                 <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
                     <a href="{{route('front.index')}}" class="d-lg-none">
                         <img alt="Logo"
-                             src="{{asset("storage/uploads/settings/".config('app.settings.app_logo'))}}"
+                             src="{{asset("storage/uploads/".config('app.settings.app_logo'))}}"
                              class="h-30px"/>
                     </a>
                 </div>
