@@ -50,6 +50,16 @@
                         </tr>
                         <tr>
                             <th  class="text-dark fw-bold">
+                                Image
+                            </th>
+                            <td>
+                                <a href="{{asset("storage/uploads/$johnReserve->hero_image")}}" target="_blank">
+                                    <img src="{{asset("storage/uploads/$johnReserve->hero_image")}}" alt="hero image" id="kt_preview_img"/>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th  class="text-dark fw-bold">
                                 Umani
                             </th>
                             <td>

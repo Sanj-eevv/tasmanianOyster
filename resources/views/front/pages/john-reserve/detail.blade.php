@@ -30,7 +30,7 @@
         <div class="container john-reserve-detail">
             <div class="flex gap-24">
                 <div class="min-h-[500px] max-h-[700px] flex-1">
-                    <img src="{{asset("storage/uploads/john-reserve-details.webp")}}" alt="John Reserve Details"
+                    <img src="{{asset("storage/uploads/$johnReserve->hero_image")}}" alt="John Reserve Details"
                          class="cover-image h-full w-full">
                 </div>
                 <div class="flex-1 pt-10">
@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <div class="container relative pb-12">
+        <div class="container relative py-12">
            @include('front.pages.john-reserve._range_slider', [
                     'slider_title' => 'Umani',
                     'label_1' => 'Low',

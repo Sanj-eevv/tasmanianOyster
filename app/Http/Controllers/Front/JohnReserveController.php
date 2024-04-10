@@ -11,7 +11,7 @@ class JohnReserveController extends Controller
      }
 
      public function details($slug){
-          $johnReserve = JohnReserve::where('slug', $slug)->first();
+          $johnReserve = JohnReserve::query()->where('slug', $slug)->firstOrFail();
           return view('front.pages.john-reserve.detail', compact('johnReserve'));
      }
 }

@@ -13,7 +13,7 @@
                     <div class="sub-menu hidden absolute min-w-[210px] top-[30px] z-20">
                         <ul>
                             @foreach($GLOBAL_JOHN_RESERVES_MENU as $johnReserveMenuSlug => $johnReserveMenuTitle)
-                                <li class="py-[8px] px-[20px] hover:bg-white bg-black/60 hover:text-black duration-300 ease-linear"><a href="{{route('front.john-reserve.details', $johnReserveMenuSlug)}}" class="whitespace-nowrap first-of-type:rounded-t-lg text-sm font-medium capitalize">{{$johnReserveMenuTitle}}</a> </li>
+                                <li class="hover:bg-white bg-black/60 hover:text-black duration-300 ease-linear"><a href="{{route('front.john-reserve.details', $johnReserveMenuSlug)}}" class="px-[20px] py-[8px] whitespace-nowrap first-of-type:rounded-t-lg text-sm font-medium capitalize inline-block w-full">{{$johnReserveMenuTitle}}</a> </li>
                             @endforeach
                         </ul>
                     </div>

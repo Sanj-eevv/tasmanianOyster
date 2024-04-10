@@ -39,6 +39,7 @@
                     <tr class="fw-semibold fs-6 text-muted">
                         <th>Id</th>
                         <th>Title</th>
+                        <th>Hero Image</th>
                         <th>Created At</th>
                         <th>Action</th>
                     </tr>
@@ -80,6 +81,7 @@
                 "columns":[
                     {"data":"id"},
                     {"data": "title"},
+                    {"data": "hero_image","searchable":false,"orderable":false},
                     {"data":"created_at"},
                     {"data":"action","searchable":false,"orderable":false}
                 ],

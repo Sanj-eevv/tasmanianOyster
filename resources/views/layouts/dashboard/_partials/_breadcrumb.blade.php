@@ -10,7 +10,7 @@
                 @foreach(Request::segments() as $segment)
                            <?php $segments .= '/'.$segment; ?>
                     <li class="breadcrumb-item text-muted">
-                        <a href="{{ $segments }}" class="text-muted text-hover-primary">{{ucwords($segment)}}</a>
+                        <a href="{{ $segments }}" class="text-muted text-hover-primary capitalize">{{ucwords(str_replace('-', ' ',$segment))}}</a>
                     </li>
                     @if(!empty($breadCrumbCount) && $loop->iteration === $breadCrumbCount)
                         @break
