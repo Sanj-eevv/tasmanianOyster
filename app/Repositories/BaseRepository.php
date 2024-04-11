@@ -5,6 +5,7 @@ namespace App\Repositories;
 
 use App\Interfaces\BaseRepositoryInterface;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder as DbBuilder;
 
@@ -55,13 +56,22 @@ class BaseRepository implements BaseRepositoryInterface
           return $this->model->destroy($ids);
      }
 
-     public function find($id, bool $failure = true)
+     public function find(int|string $id, bool $failure = true) : Model|Collection|Builder|array|null
      {
           if ($failure) {
                return $this->model->query()->findOrFail($id);
           }else{
                return $this->model->query()->find($id);
           }
+     }
+
+     public function findBySlug(string $slug, ?string $ignore = null) : Model|Builder|null
+     {
+          $query = $this->model->query()->where('slug', $slug);
+          if($ignore){
+               $query->where('slug', '<>', $ignore);
+          }
+          return $query->first();
      }
 
      public function offsetAndSort(array $meta, DbBuilder|Builder $query) : array
