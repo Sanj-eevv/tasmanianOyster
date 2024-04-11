@@ -5,13 +5,12 @@ namespace App\Http\Requests\Dashboard;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
 class JohnReserveRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
+
     public function authorize(): bool
     {
         return true;
@@ -30,6 +29,19 @@ class JohnReserveRequest extends FormRequest
               'is_active'   => ['nullable', 'boolean'],
          ];
     }
+
+     public function validated($key = null, $default = null): array
+     {
+          $validated = parent::validated();
+          return [...$validated, ...[
+               'is_active' => $validated['is_active'] ?? false,
+               'slug'      => Str::slug($validated['title']),
+               'umami'       => number_format((float) $validated['umami'], 1),
+               'saltiness'   => number_format((float) $validated['saltiness'], 1),
+               'texture'     => number_format((float) $validated['texture'], 1),
+               'finish'      => number_format((float) $validated['finish'], 1),
+          ]];
+     }
 
      public function messages() : array
      {

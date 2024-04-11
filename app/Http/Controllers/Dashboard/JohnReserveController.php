@@ -53,21 +53,7 @@ class JohnReserveController extends Controller
 
     public function store(JohnReserveRequest $request)
     {
-         $image = $request->file('hero_image');
-         $imageName = renameImageFileUpload($image);
-         $image->storeAs('public/uploads/john-reserve', $imageName);
-         $imageName =  "john-reserve/$imageName";
-         $johnReserve = JohnReserve::query()->create([
-               'title'       => $request->input('title'),
-               'slug'        => Str::slug($request->input('title')),
-               'description' => $request->input('description'),
-               'hero_image'  => $imageName,
-               'umami'       => number_format((float)$request->input('umami'),1),
-               'saltiness'   => number_format((float)$request->input('saltiness'),1),
-               'texture'     => number_format((float)$request->input('texture'),1),
-               'finish'      => number_format((float)$request->input('finish'),1),
-               'is_active'   => $request->input('is_active', false),
-          ]);
+         $johnReserve = $this->johnReserveService->store($request->validated());
          return redirect()->route('dashboard.john-reserve.show', $johnReserve);
     }
 
@@ -86,25 +72,7 @@ class JohnReserveController extends Controller
 
     public function update(JohnReserveRequest $request, JohnReserve $johnReserve)
     {
-         $image = $request->file('hero_image');
-         $imageName = $johnReserve->hero_image;
-         if($image){
-               $imageName = renameImageFileUpload($image);
-               Storage::delete("public/uploads/$johnReserve->hero_image");
-               $image->storeAs('public/uploads/john-reserve', $imageName);
-               $imageName =  "john-reserve/$imageName";
-         }
-         $johnReserve->update([
-              'title'       => $request->input('title'),
-              'slug'        => Str::slug($request->input('title')),
-              'description' => $request->input('description'),
-              'hero_image'  => $imageName,
-              'umami'       => number_format((float)$request->input('umami'),1),
-              'saltiness'   => number_format((float)$request->input('saltiness'),1),
-              'texture'     => number_format((float)$request->input('texture'),1),
-              'finish'      => number_format((float)$request->input('finish'),1),
-              'is_active'   => $request->input('is_active', false),
-         ]);
+         $johnReserve = $this->johnReserveService->update($request->validated(), $johnReserve);
          return redirect()->route('dashboard.john-reserve.show', $johnReserve);
     }
 

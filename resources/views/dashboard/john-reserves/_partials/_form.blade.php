@@ -12,10 +12,6 @@
     <!--end::Col-->
 </div>
 
-@if($errors->any())
-    {{ implode('', $errors->all('<div>:message</div>')) }}
-@endif
-
 <div class="row g-9 mb-8">
     <!--begin::Col-->
     <div class="col-md-12 fv-row">

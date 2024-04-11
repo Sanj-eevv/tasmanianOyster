@@ -3,6 +3,11 @@
 @section('breadcrumb')
     @include('layouts.dashboard._partials._breadcrumb', ['breadCrumbCount' => 2])
 @endsection
+@push('styles')
+    <style>
+        .
+    </style>
+@endpush
 @section('content')
     <div class="card py-4">
         <!--begin::Card header-->
@@ -50,44 +55,37 @@
                         </tr>
                         <tr>
                             <th  class="text-dark fw-bold">
-                                Image
+                                <span class="d-inline-block mb-6">Image</span>
                             </th>
                             <td>
                                 <a href="{{asset("storage/uploads/$johnReserve->hero_image")}}" target="_blank">
-                                    <img src="{{asset("storage/uploads/$johnReserve->hero_image")}}" alt="hero image" id="kt_preview_img"/>
+                                    <img src="{{asset("storage/uploads/$johnReserve->hero_image")}}" alt="hero image" class="mb-6" id="kt_preview_img"/>
                                 </a>
                             </td>
                         </tr>
-                        <tr>
+                        @php
+                            $sliders = ['umami', 'saltiness', 'texture', 'finish'];
+                        @endphp
+                        @foreach($sliders as $slider)
+                            <tr style="height: {{$loop->last ? '45px' : '65px'}}">
                             <th  class="text-dark fw-bold">
-                                Umani
+                                {{ucwords($slider)}}
                             </th>
                             <td>
-                                {{$johnReserve->saltiness}}
+                                <div id="{{$slider}}Slider" disabled></div>
                             </td>
                         </tr>
+                        @endforeach
                         <tr>
-                            <th  class="text-dark fw-bold">
-                                Saltiness
+                            <th class="text-dark fw-bold">
+                                Active
                             </th>
                             <td>
-                                {{$johnReserve->saltiness}}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th  class="text-dark fw-bold">
-                                Texture
-                            </th>
-                            <td>
-                                {{$johnReserve->texture}}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th  class="text-dark fw-bold">
-                                Finish
-                            </th>
-                            <td>
-                                {{$johnReserve->finish}}
+                                <div class="form-check form-switch form-check-custom form-check-success form-check-solid">
+                                    <label>
+                                        <input class="form-check-input" type="checkbox" disabled {{$johnReserve->is_active ? 'checked' : ''}}/>
+                                    </label>
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -105,3 +103,24 @@
         <!--end::Card header-->
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        $(document).ready(function (){
+            @foreach($sliders as $slider)
+            let {{$slider.'El'}} = document.getElementById("{{$slider}}Slider");
+            let {{$slider.'Obj'}} = noUiSlider.create({{$slider.'El'}}, {
+                start: [0],
+                connect: 'lower',
+                tooltips: [wNumb({decimals: 1})],
+                range: {
+                    "min": 0.1,
+                    "max": 5
+                }
+            });
+            {{$slider.'Obj'}}.set({{$johnReserve->{$slider} ?? '0.1'}});
+            @endforeach
+
+        });
+    </script>
+@endpush

@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
 class JohnReserve extends Model
 {
@@ -28,6 +29,10 @@ class JohnReserve extends Model
                'finish'    => 'float',
                'is_active' => 'boolean',
           ];
+     }
+
+     public static function updateCachedValue(){
+          Cache::forget('johnReserve');
      }
 
 }
