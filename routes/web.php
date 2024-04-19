@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\GalleryController;
 use App\Http\Controllers\Dashboard\SettingController;
 use App\Http\Controllers\Front\ContactController as FrontContactController;
 use App\Http\Controllers\Dashboard\ContactController;
@@ -21,6 +22,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'au
      Route::get('contacts', [ContactController::class, 'index'])->name('contact.index');
      Route::get('contacts/{contact}', [ContactController::class, 'show'])->name('contact.show');
      Route::delete('contacts/{contact}', [ContactController::class, 'destroy'])->name('contact.destroy');
+     Route::resource('galleries', GalleryController::class)->only('index', 'store', 'destroy');
      Route::resource('john-reserve', DashboardJohnReserveController::class);
      Route::resource('settings', SettingController::class)->only('index', 'store');
      Route::resource('stories', DashboardStoryController::class);
@@ -32,5 +34,4 @@ Route::group(['prefix' => 'front', 'as' => 'front.'], function(){
      Route::get('john-reserve', [JohnReserveController::class, 'index'])->name('john-reserve.index');
      Route::get('john-reserve/{slug}', [JohnReserveController::class, 'details'])->name('john-reserve.details');
      Route::get('story', [StoryController::class, 'index'])->name('story.index');
-
 });
