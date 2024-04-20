@@ -43,13 +43,12 @@
             let myDropzone = new Dropzone("#galleries_upload", {
                 url: "{{route('dashboard.galleries.store')}}",
                 paramName: "file",
-                maxFiles: 10,
                 maxFilesize: 10,
                 addRemoveLinks: true,
                 autoProcessQueue: true,
                 parallelUploads: 3,
                 chunking: true,
-                acceptedFiles: 'image/*',
+                // acceptedFiles: 'image/*',
                 chunkSize: 2000000,
                 removedfile: function (file){
                     Swal.fire({
@@ -104,14 +103,16 @@
                     formData.append('_token', CSRF_TOKEN);
             })
 
-            myDropzone.on("error", function(file, errorMessage) {
-                toastr.error(errorMessage);
+            myDropzone.on("error", function(file, xhr) {
+                toastr.error(typeof xhr === 'object' ?  xhr.message : xhr);
             });
 
 
             myDropzone.on("complete", function(file) {
-                let obj = JSON.parse(file.xhr.responseText);
-                file.id = obj.id;
+               if(file.status !== 'error'){
+                   let obj = JSON.parse(file.xhr.responseText);
+                   file.id = obj.id;
+               }
             });
         });
     </script>

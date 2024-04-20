@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Helpers\AppHelper;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Dashboard\GalleryRequest;
 use App\Http\Requests\Dashboard\JohnReserveRequest;
 use App\Http\Resources\JohnReserve\JohnReserveResource;
 use App\Interfaces\GalleryRepositoryInterface;
@@ -25,21 +26,17 @@ class GalleryController extends Controller
 {
    public function __construct(protected GalleryRepositoryInterface $galleryRepository, protected GalleryService $galleryService){}
 
-    public function index(Request $request)
+    public function index()
     {
          $viewData['allFiles'] = $this->galleryRepository->all();
          return view('dashboard.galleries.index')->with($viewData);
     }
 
 
-    public function store(Request $request)
+    public function store(GalleryRequest $request)
     {
          try{
               $receiver = new FileReceiver("file", $request, HandlerFactory::classFromRequest($request));
-
-              if ($receiver->isUploaded() === false) {
-                   throw new UploadMissingFileException();
-              }
 
               $save = $receiver->receive();
 
@@ -56,10 +53,7 @@ class GalleryController extends Controller
                         'done'   => 100,
                         'status' => true
                    ]);
-
-
               }
-
 
               $handler = $save->handler();
 
