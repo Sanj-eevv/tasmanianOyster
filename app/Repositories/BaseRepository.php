@@ -28,7 +28,7 @@ class BaseRepository implements BaseRepositoryInterface
      public function paginatedWithQuery(array $meta, $query = null): array
      {
           if(!$query){
-               $query = $this->model;
+               $query = $this->model->query();
           }
           return $this->offsetAndSort($meta, $query);
      }

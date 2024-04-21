@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
               SettingSeeder::class,
               StorySeeder::class,
               JohnReserveSeeder::class,
+              GallerySeeder::class,
          ]);
     }
 }

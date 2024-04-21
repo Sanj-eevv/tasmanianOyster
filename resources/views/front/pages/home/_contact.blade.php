@@ -1,4 +1,4 @@
-<section class="section-contact text-white section-margin-top slanted-bg section-padding-top section-padding-bottom overflow-x-hidden">
+<section class="section-contact text-white section-margin-top slanted-bg section-padding-top pb-16 overflow-x-hidden">
     <div class="container">
         <h3 class="section-title text-white aos-init aos-animate" data-aos="fade-right" data-aos-duration="1800">
             Talk to us
