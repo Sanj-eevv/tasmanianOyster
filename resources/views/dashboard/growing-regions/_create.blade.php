@@ -26,7 +26,7 @@
         <!--begin::Card body-->
         <div class="card-body pt-5">
             <!--begin:Form-->
-            <form id="create_growing_region_form" class="form" action="{{route('dashboard.growing-regions.store')}}" method="POST" enctype="multipart/form-data">
+            <form id="growing_region_form" class="form" action="{{route('dashboard.growing-regions.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @include('dashboard.growing-regions._partials._form',['buttonText' => 'Create'])
             </form>

@@ -22,14 +22,18 @@ class GrowingRegionRequest extends FormRequest
     public function rules(Request $request): array
     {
          return[
-              'title'           => ['required', 'string', 'max:191', Rule::unique('growing_regions')->ignore($request->route('growing_region'))],
-              'subtitle'        => ['required', 'string', 'max:191'],
-              'description'     => ['required', 'string'],
-              'characteristics' => ['nullable', 'string'],
-              'tasting_note'    => ['nullable', 'string'],
-              'hero_image'      => ['required_without:hero_image_old', 'image', 'mimes:jpeg,png,jpg,svg,webp', 'max:2048'],
-              'hero_image_sub'  => ['required_without:hero_image_sub_old', 'image', 'mimes:jpeg,png,jpg,svg,webp', 'max:2048'],
-              'is_active'       => ['nullable', 'boolean'],
+              'title'                       => ['required', 'string', 'max:191', Rule::unique('growing_regions')->ignore($request->route('growing_region'))],
+              'subtitle'                    => ['required', 'string', 'max:191'],
+              'description'                 => ['required', 'string'],
+              'characteristics'             => ['nullable', 'string'],
+              'tasting_note'                => ['nullable', 'string'],
+              'hero_image'                  => ['required_without:hero_image_old', 'image', 'mimes:jpeg,png,jpg,svg,webp', 'max:2048'],
+              'hero_image_sub'              => ['required_without:hero_image_sub_old', 'image', 'mimes:jpeg,png,jpg,svg,webp', 'max:2048'],
+              'is_active'                   => ['nullable', 'boolean'],
+              'teams_repeater'              => ['nullable', 'array'],
+              'teams_repeater.*.team_name'  => ['required', 'string'],
+              'teams_repeater.*.team_role'  => ['required', 'string'],
+              'teams_repeater.*.team_image' => ['required', 'image', 'mimes:jpeg,png,jpg,svg,webp', 'max:2048'],
          ];
     }
 
@@ -63,8 +67,11 @@ class GrowingRegionRequest extends FormRequest
      public function messages() : array
      {
           return [
-               'hero_image.required_without'     => 'Hero image is required.',
-               'hero_image_sub.required_without' => 'Hero image sub is required.'
+               'hero_image.required_without'         => 'Hero image is required.',
+               'hero_image_sub.required_without'     => 'Hero image sub is required.',
+               'teams_repeater.*.team_name.required' => 'Team name is required.',
+               'teams_repeater.*.team_role.required' => 'Team role is required.',
+               'teams_repeater.*.team_image'         => 'Team image is required.'
           ];
      }
 

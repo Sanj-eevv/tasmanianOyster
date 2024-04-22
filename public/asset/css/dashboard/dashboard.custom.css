@@ -40,3 +40,48 @@ table.dataTable + div.d-md-flex{
     right: 12px;
     bottom: 12px;
 }
+
+
+
+/*KS FILE UPLOADER CSS STARTS*/
+.ks-file-uploader-preview-box{
+    margin-top:10px;
+}
+.ks-file-uploader-preview-box .file {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.ks-file-uploader-preview-box .file img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.ks-file-uploader-preview-box .file .fa{
+    font-size: 68px;
+    margin-right: 10px;
+}
+
+.ks-file-uploader-preview-box .file span {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ks-file-uploader-preview-box .file button {
+    margin-left: 10px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/*KS FILE UPLOADER CSS ENDS*/

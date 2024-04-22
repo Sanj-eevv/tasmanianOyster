@@ -26,7 +26,7 @@
         <!--begin::Card body-->
         <div class="card-body pt-5">
             <!--begin:Form-->
-            <form id="update_john_reserve_form" class="form" action="{{route('dashboard.growing-regions.update', $growingRegion)}}" method="POST" enctype="multipart/form-data">
+            <form id="growing_region_form" class="form" action="{{route('dashboard.growing-regions.update', $growingRegion)}}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 @include('dashboard.growing-regions._partials._form',['buttonText' => 'Update'])

@@ -31,7 +31,7 @@
             <!--end::Email-->
         </div>
         <!--end::Input group=-->
-        <div class="fv-row mb-3">
+        <div class="fv-row mb-8">
             <!--begin::Password-->
             <label class="w-100">
                 <input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control bg-transparent  @error('password') is-invalid @enderror" />

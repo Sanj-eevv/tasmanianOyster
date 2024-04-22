@@ -7,6 +7,8 @@
 <script src="{{asset('asset/js/dashboard/assets/plugins/custom/datatable/datatable.bundle.js')}}"></script>
 <script src="{{asset('asset/js/dashboard/assets/plugins/custom/tinymce/tinymce.bundle.js')}}"></script>
 <script src="{{asset('asset/js/dashboard/assets/plugins/custom/toastr/build/toastr.min.js')}}"></script>
+<script src="{{asset('asset/js/dashboard/jquery-repeater.js')}}"></script>
+
 
 @include('shared.toaster_alert_script')
 @include('shared.shared_script')

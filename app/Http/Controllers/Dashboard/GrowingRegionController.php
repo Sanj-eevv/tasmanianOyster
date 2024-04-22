@@ -69,6 +69,7 @@ class GrowingRegionController extends Controller
 
     public function update(GrowingRegionRequest $request, GrowingRegion $growingRegion)
     {
+         dd($request->validated());
          $growingRegion = $this->growingRegionService->update($request->validated(), $growingRegion);
          return redirect()->route('dashboard.growing-regions.show', $growingRegion);
     }
