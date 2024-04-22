@@ -19,7 +19,7 @@
                     </div>
                 </li>
                 <li><a href="{{route('front.story.index')}}" class="font-medium pb-[10px]">OUR STORY</a></li>
-                <li><a href="#" class="font-medium pb-[10px]">GROWING REGION</a></li>
+                <li><a href="{{route('front.growing-region.index')}}" class="font-medium pb-[10px]">GROWING REGION</a></li>
                 @auth
                     <li class="border font-medium border-white border-[2px] inline-block cursor-pointer py-2 px-6 text-sm hover:bg-white rounded-full hover:text-black transition ease-in-out duration-300"
                         onClick="document.getElementById('logout-form').submit()"

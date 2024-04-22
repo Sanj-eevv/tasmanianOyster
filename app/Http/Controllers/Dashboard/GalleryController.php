@@ -3,22 +3,11 @@ declare(strict_types = 1);
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Helpers\AppHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\GalleryRequest;
-use App\Http\Requests\Dashboard\JohnReserveRequest;
-use App\Http\Resources\JohnReserve\JohnReserveResource;
 use App\Interfaces\GalleryRepositoryInterface;
-use App\Interfaces\JohnReserveRepositoryInterface;
 use App\Models\Gallery;
-use App\Models\JohnReserve;
-use App\Models\Story;
 use App\Services\Dashboard\GalleryService;
-use App\Services\Front\JohnReserveService;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
-use Pion\Laravel\ChunkUpload\Exceptions\UploadMissingFileException;
 use Pion\Laravel\ChunkUpload\Handler\HandlerFactory;
 use Pion\Laravel\ChunkUpload\Receiver\FileReceiver;
 

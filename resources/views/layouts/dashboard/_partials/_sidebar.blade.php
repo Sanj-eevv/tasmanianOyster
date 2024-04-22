@@ -85,6 +85,19 @@
                 <!--begin:Menu item-->
                 <div class="menu-item">
                     <!--begin:Menu link-->
+                    <a class="menu-link {{current_page('growing-regions') ? 'active' : '' }}" href="{{ route('dashboard.growing-regions.index') }}">
+                         <span class="menu-icon">
+                             <i class="fas fa-search-location"></i>
+                        </span>
+                        <span class="menu-title">Growing Regions</span>
+                    </a>
+                    <!--end:Menu link-->
+                </div>
+                <!--end:Menu item-->
+
+                <!--begin:Menu item-->
+                <div class="menu-item">
+                    <!--begin:Menu link-->
                     <a class="menu-link {{current_page('john-reserve') ? 'active' : '' }}" href="{{ route('dashboard.john-reserve.index') }}">
                          <span class="menu-icon">
                             <i class="fas fa-user-secret"></i>

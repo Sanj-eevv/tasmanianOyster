@@ -17,7 +17,7 @@ class JohnReserveResource extends JsonResource
          return [
               'id'         => $this->id,
               'title'      => ucwords($this->title),
-              'hero_image' => "<a target='_blank' href='$heroImage'><img src='$heroImage' alt='hero image' id='kt_preview_img'/></a>",
+              'hero_image' => "<a target='_blank' href='$heroImage'><img src='$heroImage' alt='hero image' class='kt_preview_img' id='kt_preview_img'/></a>",
               'created_at' => Carbon::parse($this->created_at)->format('m-d-Y'),
               'action'     => View::make('dashboard.john-reserves._action')->with('r', $this)->render(),
          ];

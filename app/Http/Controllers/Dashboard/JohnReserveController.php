@@ -9,7 +9,7 @@ use App\Http\Requests\Dashboard\JohnReserveRequest;
 use App\Http\Resources\JohnReserve\JohnReserveResource;
 use App\Interfaces\JohnReserveRepositoryInterface;
 use App\Models\JohnReserve;
-use App\Services\Front\JohnReserveService;
+use App\Services\Dashboard\JohnReserveService;
 use Illuminate\Http\Request;
 
 class JohnReserveController extends Controller

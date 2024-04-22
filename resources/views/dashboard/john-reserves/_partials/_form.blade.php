@@ -35,7 +35,7 @@
                class="form-control form-control-solid @error('hero_image') is-invalid @enderror" id="hero_image"/>
         <div class="kt_preview_image_container {{(empty($johnReserve->hero_image)) ? 'd-none' : ''}}">
             <img  alt="logo" id="kt_preview_img" src="{{(empty($johnReserve->hero_image))?'': asset('storage/uploads/'.$johnReserve->hero_image)}}"
-                  class="img-fluid"/>
+                  class="img-fluid kt_preview_img"/>
         </div>
         @error('hero_image')
         <span class="invalid-feedback" role="alert">

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace App\Services\Front;
+namespace App\Services\Dashboard;
 
 use App\Interfaces\JohnReserveRepositoryInterface;
 use App\Models\JohnReserve;

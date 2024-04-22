@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\GalleryController;
+use App\Http\Controllers\Dashboard\GrowingRegionController;
 use App\Http\Controllers\Dashboard\SettingController;
 use App\Http\Controllers\Front\ContactController as FrontContactController;
 use App\Http\Controllers\Dashboard\ContactController;
+use App\Http\Controllers\Front\GrowingRegionController as FrontGrowingRegionController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\JohnReserveController;
 use App\Http\Controllers\Dashboard\JohnReserveController as DashboardJohnReserveController;
@@ -23,6 +25,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'au
      Route::get('contacts/{contact}', [ContactController::class, 'show'])->name('contact.show');
      Route::delete('contacts/{contact}', [ContactController::class, 'destroy'])->name('contact.destroy');
      Route::resource('galleries', GalleryController::class)->only('index', 'store', 'destroy');
+     Route::resource('growing-regions', GrowingRegionController::class);
      Route::resource('john-reserve', DashboardJohnReserveController::class);
      Route::resource('settings', SettingController::class)->only('index', 'store');
      Route::resource('stories', DashboardStoryController::class);
@@ -32,6 +35,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'au
 Route::group(['prefix' => 'front', 'as' => 'front.'], function(){
      Route::post('contacts', [FrontContactController::class, 'store'])->name('contact.store');
      Route::get('john-reserve', [JohnReserveController::class, 'index'])->name('john-reserve.index');
+     Route::get('growing-region', [FrontGrowingRegionController::class, 'index'])->name('growing-region.index');
      Route::get('john-reserve/{slug}', [JohnReserveController::class, 'details'])->name('john-reserve.details');
      Route::get('story', [StoryController::class, 'index'])->name('story.index');
 });

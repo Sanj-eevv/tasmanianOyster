@@ -4,8 +4,7 @@ declare(strict_types = 1);
 namespace App\Http\Requests\Dashboard;
 
 use App\Models\JohnReserve;
-use App\Services\Front\JohnReserveService;
-use Carbon\Carbon;
+use App\Services\Dashboard\JohnReserveService;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;

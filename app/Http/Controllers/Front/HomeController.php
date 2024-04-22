@@ -6,7 +6,6 @@ namespace App\Http\Controllers\Front;
 use App\Helpers\AppHelper;
 use App\Http\Controllers\Controller;
 use App\Interfaces\GalleryRepositoryInterface;
-use App\Services\Dashboard\GalleryService;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller

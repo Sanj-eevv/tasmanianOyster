@@ -3,11 +3,6 @@
 @section('breadcrumb')
     @include('layouts.dashboard._partials._breadcrumb', ['breadCrumbCount' => 2])
 @endsection
-@push('styles')
-    <style>
-        .
-    </style>
-@endpush
 @section('content')
     <div class="card py-4">
         <!--begin::Card header-->
@@ -59,7 +54,7 @@
                             </th>
                             <td>
                                 <a href="{{asset("storage/uploads/$johnReserve->hero_image")}}" target="_blank">
-                                    <img src="{{asset("storage/uploads/$johnReserve->hero_image")}}" alt="hero image" class="mb-6" id="kt_preview_img"/>
+                                    <img src="{{asset("storage/uploads/$johnReserve->hero_image")}}" alt="hero image" class="mb-6 kt_preview_img" id="kt_preview_img"/>
                                 </a>
                             </td>
                         </tr>
