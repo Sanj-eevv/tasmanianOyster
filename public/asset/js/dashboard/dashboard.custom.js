@@ -205,7 +205,7 @@ function ksHandleFileSelect(evt, selectedFiles, fileInput) {
 
     let fileInputName = fileInput.getAttribute('name');
     fileInputName = fileInputName.replace('[]', '');
-    fileInputName = fileInputName.replace(/\[(\w+)\]/g, '_$1');;
+    fileInputName = fileInputName.replace(/\[(\w+)\]/g, '_$1');
     for (let i = 0; i < files.length; i++) {
         let file = files[i];
 

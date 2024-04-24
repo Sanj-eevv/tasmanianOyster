@@ -3,12 +3,21 @@
         .team-box{
             border: 1px dashed gray;
             padding: 10px;
+            position: relative;
         }
         .text-right{
             text-align: right;
         }
+        .delete-repeater{
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
     </style>
 @endpush
+@php
+     use App\Models\Team;
+@endphp
 <div class="row g-9 mb-8">
     <!--begin::Col-->
     <div class="col-md-12 fv-row">
@@ -96,6 +105,35 @@
     </div>
     <!--end::Col-->
 </div>
+
+<div class="row  g-9 mb-4">
+    <div class="col-md-12 fv-row">
+        <label class="form-label" for="galleries">Gallery</label>
+        <div class="kt-form__control ks-file-uploader-container">
+            <input type="file" id="galleries" name="galleries[]" class="ks-file-uploader reset-element form-control form-control-solid" multiple>
+            <div class="ks-file-uploader-preview-box"></div>
+            <span class="invalid-feedback mb-2" role="alert" id="galleries_error">
+            </span>
+        </div>
+    </div>
+</div>
+@include('dashboard.growing-regions._partials._gallery_attachments', ['attachments' => $growingRegion->galleries])
+<hr/>
+<div>
+    <h2 class="mb-4">Teams</h2>
+    <div class="team-repeater">
+        <div data-repeater-list="teams_repeater">
+            @forelse($growingRegion->teams as $index => $team)
+                @include('dashboard.growing-regions._partials._teams_repeater', ['index' => $index, 'team' => $team])
+            @empty
+                @include('dashboard.growing-regions._partials._teams_repeater', ['index' => 0, 'team' => new Team()])
+            @endforelse
+        </div>
+        <div class="text-right">
+            <input data-repeater-create type="button" value="Add" class="btn btn-primary btn-sm mt-3"/>
+        </div>
+    </div>
+</div>
 <div class="row g-9 mb-8">
     <div class="col-md-12 fv-row">
         <div class="form-check form-switch form-check-custom form-check-success form-check-solid">
@@ -103,57 +141,6 @@
             <label class="form-check-label" for="is_active">
                 Active
             </label>
-        </div>
-    </div>
-</div>
-
-<hr/>
-
-<div>
-    <h2 class="mb-4">Teams</h2>
-    <div class="team-repeater">
-        <div data-repeater-list="teams_repeater">
-            <div data-repeater-item class="team-box">
-                <div class="row g-9 mb-8">
-                    <!--begin::Col-->
-                    <div class="col-md-12 fv-row">
-                        <label class="required form-label" for="teams_repeater_0_team_name">Name</label>
-                        <input id="teams_repeater_0_team_name" autocomplete="off" type="text" name="team_name" class="form-control mb-2" value="{{$growingRegion->team_name}}"/>
-                        <span class="invalid-feedback" role="alert" id="teams_repeater_0_team_name_error">
-                        </span>
-                    </div>
-                    <!--end::Col-->
-                </div>
-                <div class="row g-9 mb-8">
-                    <!--begin::Col-->
-                    <div class="col-md-12 fv-row">
-                        <label class="required form-label" for="teams_repeater_0_team_role">Role</label>
-                        <input id="teams_repeater_0_team_role" autocomplete="off" type="text" name="team_role" class="form-control mb-2" value="{{$growingRegion->team_role}}"/>
-                        <span class="invalid-feedback" role="alert" id="teams_repeater_0_team_role_error">
-                        </span>
-                    </div>
-                    <!--end::Col-->
-                </div>
-
-                <div class="row  g-9 mb-8">
-                    <div class="col-md-12 fv-row">
-                        <div class="kt-form__group--inline">
-                            <div class="kt-form__label mb-2">
-                                <label for="teams_repeater_0_team_image">Upload Image:</label>
-                            </div>
-                            <div class="kt-form__control ks-file-uploader-container">
-                                <input type="file" id="teams_repeater_0_team_image" name="team_image" class="ks-file-uploader reset-element">
-                                <div class="ks-file-uploader-preview-box"></div>
-                                <span class="invalid-feedback" role="alert" id="teams_repeater_0_team_image_error">
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="text-right">
-            <input data-repeater-create type="button" value="Add" class="btn btn-primary btn-sm mt-3"/>
         </div>
     </div>
 </div>
@@ -194,10 +181,10 @@
                     processData: false,
                     contentType: false,
                     beforeSend:function(){
-
+                        KTApp.showPageLoading();
                     },
                     success:function(resp){
-                            // alertifySuccessAndRedirect(resp.message, redirectUrl);
+                            alertifySuccessAndRedirect(resp.message, resp.redirectUrl);
                     },
                     error: function(xhr){
                         if(xhr.status){
@@ -216,6 +203,9 @@
                         }else{
                             toastError(xhr.responseJSON?.message ? xhr.responseJSON?.message : "Something went wrong!!!");
                         }
+                    },
+                    complete: function (){
+                        KTApp.hidePageLoading();
                     }
                 });
             })
@@ -227,7 +217,16 @@
                     let index = $('.team-repeater .team-box[data-repeater-item]').length - 1;
                     const newContent = $(this).html().replace(/_repeater_0_/g, `_repeater_${index}_`);
                     $(this).html(newContent);
+                    $(this).find('.reset-element').val('');
+                    $(this).find('.kt_preview_image_container').addClass('d-none');
+                    $(this).find('.error-span').text('');
                     $(this).slideDown();
+                },
+                hide: function (deleteElement){
+                    if($(this).find('.team-id-input')){
+                        
+                    }
+                    $(this).slideUp(deleteElement);
                 }
             })
 

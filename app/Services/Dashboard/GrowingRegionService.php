@@ -3,57 +3,113 @@ declare(strict_types = 1);
 
 namespace App\Services\Dashboard;
 
+use App\DTO\GrowingRegionDTO;
 use App\Interfaces\GrowingRegionRepositoryInterface;
 use App\Models\GrowingRegion;
+use Exception;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class GrowingRegionService
 {
-     public function __construct(protected GrowingRegionRepositoryInterface $growingRegionRepository){}
+     public function __construct(protected GrowingRegionRepositoryInterface $growingRegionRepository, protected TeamService $teamService, protected GrowingRegionGalleryService
+     $growingRegionGalleryService){}
 
      public function findBySlug(string $slug, ?string $ignore = null) : Model|Builder|null
      {
-          return $this->growingRegionRepository->findBySlug($slug, $ignore);
+          return $this->growingRegionRepository->findBySlug(slug: $slug, ignore: $ignore);
      }
 
      public function find(string|int $id) : Model|Collection|Builder|array|null
      {
-          return $this->growingRegionRepository->find($id);
+          return $this->growingRegionRepository->find(id: $id);
      }
 
-     public function store(array $input) : mixed
+     /**
+      * @throws Exception
+      */
+     public function store(GrowingRegionDTO $growingRegionDTO) : mixed
      {
-          $input['hero_image'] = self::handleImageUpload($input['hero_image']);
-          $input['hero_image_sub'] = self::handleImageUpload($input['hero_image_sub']);
-          return $this->growingRegionRepository->store($input);
+          $teamsImages = $galleries = [];
+          try
+          {
+               DB::beginTransaction();
+               $growingRegionDTO->heroImage = self::handleImageUpload(newImage: $growingRegionDTO->heroImage);
+               $growingRegionDTO->heroImageSub = self::handleImageUpload(newImage: $growingRegionDTO->heroImageSub);
+               $growingRegion = $this->growingRegionRepository->store(input: $growingRegionDTO->toArray());
+               foreach($growingRegionDTO->teams as $teamDTO){
+                    $teamsImages[] = $this->teamService->store(teamDTO: $teamDTO, growingRegion: $growingRegion)->image;
+               }
+               foreach($growingRegionDTO->growingRegionGalleries as $gallery){
+                    $galleries[] = $this->growingRegionGalleryService->store(file: $gallery, growingRegion: $growingRegion)->file_url;
+               }
+               DB::commit();
+          }catch( Exception $exception){
+               Storage::delete(paths: ["public/uploads/$growingRegionDTO->heroImage", "public/uploads/$growingRegionDTO->heroImageSub", ...$teamsImages, ...$galleries]);
+               DB::rollBack();
+               throw new Exception(message: $exception->getMessage());
+          }
+          return $growingRegion;
      }
 
-     public function update(array $input, GrowingRegion $growingRegion) : Model
+     /**
+      * @throws Exception
+      */
+     public function update(GrowingRegionDTO $growingRegionDTO, GrowingRegion $growingRegion) : Model
      {
-          $input['hero_image'] = self::handleImageUpload($input['hero_image'] ?? null, $growingRegion->getAttribute('hero_image'));
-          $input['hero_image_sub'] = self::handleImageUpload($input['hero_image_sub'] ?? null, $growingRegion->getAttribute('hero_image_sub'));
-          return $this->growingRegionRepository->update($input,$growingRegion);
+          $teamsImages = $galleries = [];
+          try
+          {
+               DB::beginTransaction();
+               $growingRegionDTO->heroImage = self::handleImageUpload(newImage: $growingRegionDTO->heroImage, currentImageName: $growingRegion->getAttribute(key: 'hero_image'));
+               $growingRegionDTO->heroImageSub = self::handleImageUpload(newImage: $growingRegionDTO->heroImageSub, currentImageName: $growingRegion->getAttribute(key: 'hero_image_sub'));
+               $growingRegion = $this->growingRegionRepository->update(input: $growingRegionDTO->toArray(),modelObj: $growingRegion);
+               $teamIds = [];
+               foreach($growingRegionDTO->teams as $teamDTO){
+                    if($teamDTO->teamId){
+                        $this->teamService->update(teamDTO: $teamDTO, team: $teamDTO->teamId);
+                         $teamIds[] = $teamDTO->teamId;
+                    }else{
+                         $teamObj = $this->teamService->store(teamDTO: $teamDTO, growingRegion: $growingRegion);
+                         $teamIds[] = $teamObj->id;
+                         $teamsImages[] = $teamObj->image;
+                    }
+               }
+               /** @var GrowingRegion $growingRegion */
+               $toDeleteTeams = $growingRegion->teams()->whereNotIn(column: 'id', values: $teamIds)->pluck(column: 'id')->toArray();
+               $this->teamService->massDelete(teamIds:$toDeleteTeams);
+
+               foreach($growingRegionDTO->growingRegionGalleries as $gallery){
+                    $galleries[] = $this->growingRegionGalleryService->store(file: $gallery, growingRegion: $growingRegion)->file_url;
+               }
+               DB::commit();
+          }catch(Exception $exception){
+               Storage::delete(paths: [...$teamsImages, ...$galleries]);
+               DB::rollBack();
+               throw new Exception(message: $exception->getMessage());
+          }
+          return $growingRegion;
      }
 
      public function handleImageUpload(?UploadedFile $newImage, string $currentImageName = null) : ?string
      {
           if(empty($newImage)){return $currentImageName;}
 
-          !empty($currentImageName) && Storage::delete("public/uploads/$currentImageName");
+          !empty($currentImageName) && Storage::delete(paths:"public/uploads/$currentImageName");
 
-          $imageName = renameImageFileUpload($newImage);
-          $newImage->storeAs('public/uploads/growing-region', $imageName);
+          $imageName = renameImageFileUpload(file: $newImage);
+          $newImage->storeAs(path:'public/uploads/growing-region', name: $imageName);
           return "growing-region/$imageName";
      }
 
      public function delete(GrowingRegion $growingRegion) : void
      {
-         Storage::delete("public/uploads/{$growingRegion->getAttribute('hero_image')}");
-         $this->growingRegionRepository->delete($growingRegion);
+         Storage::delete("public/uploads/{$growingRegion->getAttribute(key: 'hero_image')}");
+         $this->growingRegionRepository->delete(modelObj: $growingRegion);
      }
 
 }

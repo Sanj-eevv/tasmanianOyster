@@ -1,3 +1,2 @@
-<a href="{{ route('dashboard.growing-regions.show', $r->id) }}" class="btn btn-sm btn-icon btn-light-facebook" title="{{ __('Show') }}"><i class="fas fa-eye"></i></a>
 <a href="{{ route('dashboard.growing-regions.edit', $r->id) }}" class="btn btn-sm btn-icon btn-light-twitter" title="{{ __('Edit') }}"><i class="fas fa-pencil-alt"></i></a>
 <button class="btn btn-icon btn-light-youtube btn-sm ml-1p" onclick="confirmDelete(() => {deleteDatatableRecord('growingRegionDatatable', {{$r->id}}, '{{route('dashboard.growing-regions.destroy',$r->id)}}')})"  title="{{ __('Destroy') }}"><i class="fas fa-trash"></i></button>

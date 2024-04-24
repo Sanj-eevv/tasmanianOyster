@@ -19,6 +19,11 @@ class BaseRepository implements BaseRepositoryInterface
           $this->model = $model;
      }
 
+     public function modelQuery() : Builder
+     {
+          return $this->model->query();
+     }
+
      public function all(): mixed
      {
           return $this->model->all();
@@ -93,4 +98,9 @@ class BaseRepository implements BaseRepositoryInterface
           return $this->model->query()->upsert($values, $uniqueBy, $update);
      }
 
+
+     public function getByCondition(array $condition) : Collection|array
+     {
+          return $this->model->query()->where($condition)->get();
+     }
 }

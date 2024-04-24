@@ -33,4 +33,9 @@ interface BaseRepositoryInterface
 
 
     public function offsetAndSort(array $meta, DbBuilder|Builder $query);
+
+    public function getByCondition(array $condition): Collection|array;
+
+     public function modelQuery() : Builder;
+
 }

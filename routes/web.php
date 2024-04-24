@@ -25,7 +25,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'au
      Route::get('contacts/{contact}', [ContactController::class, 'show'])->name('contact.show');
      Route::delete('contacts/{contact}', [ContactController::class, 'destroy'])->name('contact.destroy');
      Route::resource('galleries', GalleryController::class)->only('index', 'store', 'destroy');
-     Route::resource('growing-regions', GrowingRegionController::class);
+     Route::resource('growing-regions', GrowingRegionController::class)->except('show');
      Route::resource('john-reserve', DashboardJohnReserveController::class);
      Route::resource('settings', SettingController::class)->only('index', 'store');
      Route::resource('stories', DashboardStoryController::class);

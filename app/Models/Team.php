@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {
+
+
      protected $fillable = [
+          'growing_region_id',
           'name',
           'role',
           'image',

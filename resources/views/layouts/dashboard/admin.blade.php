@@ -11,6 +11,11 @@
       data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true"
       data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true"
       data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
+<div class="page-loader" style="background: #fdfdfd6e">
+    <span class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </span>
+</div>
 <!--begin::Theme mode setup on page load-->
 <script>var defaultThemeMode = "light";
     var themeMode;
