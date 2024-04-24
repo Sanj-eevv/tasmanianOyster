@@ -14,9 +14,10 @@
             <div class="card-toolbar">
                 <!--begin::Toolbar-->
                 <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
-                    <a href="{{route('dashboard.growing-regions.index')}}" class="btn btn-light-dark btn-sm">
+                    <a href="{{route('dashboard.growing-regions.index')}}" class="btn btn-light-dark btn-sm me-2">
                         Back
                     </a>
+                    <button class="btn btn-icon btn-light-youtube btn-sm" onclick="confirmDelete(() => {deleteDatatableRecord('growingRegionDatatable', {{$growingRegion->id}}, '{{route('dashboard.growing-regions.destroy',$growingRegion->id)}}', '{{route('dashboard.growing-regions.index')}}')})"  title="{{ __('Destroy') }}"><i class="fas fa-trash"></i></button>
                 </div>
                 <!--end::Toolbar-->
             </div>

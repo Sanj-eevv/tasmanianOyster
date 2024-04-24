@@ -13,13 +13,15 @@ class GrowingRegionResource extends JsonResource
 
     public function toArray(Request $request): array
     {
-         $heroImage = asset("storage/uploads/$this->hero_image");
+         $heroImage = asset(path:"storage/uploads/$this->hero_image");
+         $heroImageSub = asset(path:"storage/uploads/$this->hero_image_sub");
          return [
-              'id'         => $this->id,
-              'title'      => ucwords($this->title),
-              'hero_image' => "<a target='_blank' href='$heroImage'><img src='$heroImage' alt='hero image' class='kt_preview_img' id='kt_preview_img'/></a>",
-              'created_at' => Carbon::parse($this->created_at)->format('m-d-Y'),
-              'action'     => View::make('dashboard.growing-regions._action')->with('r', $this)->render(),
+              'id'             => $this->id,
+              'title'          => ucwords(string: $this->title),
+              'hero_image'     => "<a target='_blank' href='$heroImage'><img src='$heroImage' alt='hero image' class='kt_preview_img'/></a>",
+              'hero_image_sub' => "<a target='_blank' href='$heroImage'><img src='$heroImageSub' alt='hero image sub' class='kt_preview_img'/></a>",
+              'created_at'     => Carbon::parse(time: $this->created_at)->format(format: 'm-d-Y'),
+              'action'         => View::make(view: 'dashboard.growing-regions._action')->with(key: 'r', value: $this)->render(),
          ];
     }
 }

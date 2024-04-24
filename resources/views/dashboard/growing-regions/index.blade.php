@@ -40,6 +40,7 @@
                         <th>Id</th>
                         <th>Title</th>
                         <th>Hero Image</th>
+                        <th>Hero Image Sub</th>
                         <th>Created At</th>
                         <th>Action</th>
                     </tr>
@@ -82,6 +83,7 @@
                     {"data":"id"},
                     {"data": "title"},
                     {"data": "hero_image","searchable":false,"orderable":false},
+                    {"data": "hero_image_sub","searchable":false,"orderable":false},
                     {"data":"created_at"},
                     {"data":"action","searchable":false,"orderable":false}
                 ],

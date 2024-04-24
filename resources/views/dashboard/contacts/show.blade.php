@@ -14,10 +14,10 @@
             <div class="card-toolbar">
                 <!--begin::Toolbar-->
                 <div class="d-flex justify-content-end gap-2" data-kt-customer-table-toolbar="base">
-                    <a href="{{route('dashboard.contact.index')}}" class="btn btn-light-dark btn-sm">
+                    <a href="{{route('dashboard.contact.index')}}" class="btn btn-light-dark btn-sm me-2">
                         Back
                     </a>
-                    <button class="btn btn-icon btn-light-youtube btn-sm ml-1p" onclick="confirmDelete(() => {deleteDatatableRecord('contactDatatable', {{$contact->id}}, '{{route('dashboard.contact.destroy',$contact->id)}}', '{{route('dashboard.contact.index')}}')})"  title="{{ __('Destroy') }}"><i class="fas fa-trash"></i></button>
+                    <button class="btn btn-icon btn-light-youtube btn-sm" onclick="confirmDelete(() => {deleteDatatableRecord('contactDatatable', {{$contact->id}}, '{{route('dashboard.contact.destroy',$contact->id)}}', '{{route('dashboard.contact.index')}}')})"  title="{{ __('Destroy') }}"><i class="fas fa-trash"></i></button>
                 </div>
                 <!--end::Toolbar-->
             </div>

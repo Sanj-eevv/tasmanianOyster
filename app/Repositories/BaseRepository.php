@@ -82,9 +82,9 @@ class BaseRepository implements BaseRepositoryInterface
      public function offsetAndSort(array $meta, DbBuilder|Builder $query) : array
      {
           $total = $query->count();
-          $query->orderBy($meta['order'], $meta['dir']);
+          $query->orderBy(column: $meta['order'], direction: $meta['dir']);
           if ($meta['limit'] != '-1') {
-               $query->offset($meta['offset'])->limit($meta['limit']);
+               $query->offset(value: $meta['offset'])->limit(value: $meta['limit']);
           }
           return [
                'data'            => $query->get(),

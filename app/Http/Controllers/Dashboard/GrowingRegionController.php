@@ -31,26 +31,26 @@ class GrowingRegionController extends Controller
                    'title',
                    'created_at',
               ];
-              $meta = AppHelper::defaultTableInput([
-                   'offset' => $request->input('start'),
-                   'limit'  => $request->input('length') ?? '-1',
-                   'order'  => $columns[$request->input('order.0.column')] ?? $columns[0],
-                   'dir'    => $request->input('order.0.dir'),
-                   'search' => $request->input('search.value'),
+              $meta = AppHelper::defaultTableInput(input: [
+                   'offset' => $request->input(key:'start'),
+                   'limit'  => $request->input(key:'length') ?? '-1',
+                   'order'  => $columns[$request->input(key: 'order.0.column')] ?? $columns[0],
+                   'dir'    => $request->input(key: 'order.0.dir'),
+                   'search' => $request->input(key: 'search.value'),
               ]);
-              $resp = $this->growingRegionRepository->paginatedWithQuery($meta);
-              $resp['data'] = GrowingRegionResource::collection($resp['data']);
-              $resp['draw'] = intval($request->input('draw'));
-              return response()->json($resp);
+              $resp = $this->growingRegionRepository->paginatedWithQuery(meta: $meta);
+              $resp['data'] = GrowingRegionResource::collection(resource: $resp['data']);
+              $resp['draw'] = intval(value: $request->input(key:'draw'));
+              return response()->json(data: $resp);
          }
-         return view('dashboard.growing-regions.index');
+         return view(view: 'dashboard.growing-regions.index');
     }
 
 
     public function create()
     {
          $growingRegion = new GrowingRegion();
-         return view('dashboard.growing-regions._create',compact('growingRegion'));
+         return view(view: 'dashboard.growing-regions._create',data: compact(var_name: 'growingRegion'));
     }
 
 
@@ -59,16 +59,16 @@ class GrowingRegionController extends Controller
       */
      public function store(GrowingRegionRequest $request)
     {
-         $growingRegionDto = GrowingRegionDTO::fromArray($request->validated());
-         $growingRegion = $this->growingRegionService->store($growingRegionDto);
-         return response()->json(['message' => 'Growing Region Created', 'redirectUrl' => route('dashboard.growing-regions.edit', $growingRegion->id)]);
+         $growingRegionDto = GrowingRegionDTO::fromArray(input: $request->validated());
+         $growingRegion = $this->growingRegionService->store(growingRegionDto: $growingRegionDto);
+         return response()->json(data: ['message' => 'Growing Region Created', 'redirectUrl' => route(name: 'dashboard.growing-regions.edit', parameters: $growingRegion->id)]);
     }
 
 
     public function edit(GrowingRegion $growingRegion)
     {
-         $growingRegion->load(['teams', 'galleries']);
-         return view('dashboard.growing-regions._edit', compact('growingRegion'));
+         $growingRegion->load(relations: ['teams', 'galleries']);
+         return view(view:'dashboard.growing-regions._edit', data: compact(var_name: 'growingRegion'));
     }
 
 
@@ -82,15 +82,14 @@ class GrowingRegionController extends Controller
          $toDeleteAttachments = json_decode(json: $request->validated()['removed_attachments'] ?? '' ) ?? [];
          $this->growingRegionGalleryService->massDelete(galleryIds: $toDeleteAttachments);
          return response()->json(data: ['message' => 'Growing Region Updated', 'redirectUrl' => route(name:'dashboard.growing-regions.edit', parameters:
-              $growingRegion->getAttribute
-         (key:'id'))]);
+              $growingRegion->getAttribute(key:'id'))]);
     }
 
 
     public function destroy(GrowingRegion $growingRegion)
     {
-         $this->growingRegionService->delete($growingRegion);
-         return response()->json([
+         $this->growingRegionService->delete(growingRegion: $growingRegion);
+         return response()->json(data: [
               'message' => 'Growing Region Successfully Deleted',
          ]);
     }

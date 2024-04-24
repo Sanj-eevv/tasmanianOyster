@@ -18,12 +18,12 @@ class GrowingRegionRepository extends BaseRepository implements GrowingRegionRep
      public function paginatedWithQuery(array $meta, $query = null ): array
      {
           $query = $this->model::query()
-               ->select('id', 'title', 'hero_image', 'slug', 'created_at')
-               ->where('id', 'like', $meta['search'] . '%')
-               ->orWhere('title', 'like', $meta['search'] . '%')
-               ->orWhere('created_at', 'like', $meta['search'] . '%');
+               ->select(columns: ['id', 'title', 'hero_image', 'hero_image_sub', 'slug', 'created_at'])
+               ->where(column: 'id', operator: 'like', value: $meta['search'] . '%')
+               ->orWhere(column: 'title', operator: 'like', value: $meta['search'] . '%')
+               ->orWhere(column: 'created_at', operator: 'like', value: $meta['search'] . '%');
 
-          return $this->offsetAndSort($meta, $query);
+          return $this->offsetAndSort(meta: $meta, query: $query);
      }
 
 
