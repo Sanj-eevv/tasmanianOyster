@@ -1,7 +1,7 @@
 @extends('layouts.dashboard.admin')
 @section('title', 'John Reserve')
 @section('breadcrumb')
-    @include('layouts.dashboard._partials._breadcrumb')
+    @include('layouts.dashboard._partials._breadcrumb', ['breadCrumbCount' => 2])
 @endsection
 @section('content')
     <div class="card py-4">

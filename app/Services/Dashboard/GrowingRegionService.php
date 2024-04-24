@@ -108,7 +108,10 @@ class GrowingRegionService
 
      public function delete(GrowingRegion $growingRegion) : void
      {
-         Storage::delete("public/uploads/{$growingRegion->getAttribute(key: 'hero_image')}");
+         $growingRegion->load(relations: ['galleries', 'teams']);
+         Storage::delete(paths:["public/uploads/{$growingRegion->getAttribute(key: 'hero_image')}", "public/uploads/{$growingRegion->getAttribute(key: 'hero_image_sub')}"]);
+         $this->growingRegionGalleryService->massDelete(galleryIds: $growingRegion->galleries->pluck('id')->toArray());
+         $this->teamService->massDelete(teamIds: $growingRegion->teams->pluck('id')->toArray());
          $this->growingRegionRepository->delete(modelObj: $growingRegion);
      }
 
