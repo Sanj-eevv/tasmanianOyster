@@ -78,17 +78,16 @@
         </div>
     </div>
     @endif
+    @if(count($growingRegion->galleries) > 0)
     <div class="growing-region-image-slider bg-black text-white pt-8">
         <h2 class="section-title text-center !font-light">{{$growingRegion->title}} Image Gallery</h2>
         <div id="region-image-slider">
-            <img src="{{asset('storage/uploads/gallery/508bbd_5aa738b4de8e4cb39278f0357113d541~mv2.webp')}}" class="h-[400px]">
-            <img src="{{asset('storage/uploads/gallery/508bbd_37bafc5781c043d7937955710cccf7bd~mv2.webp')}}" class="h-[400px]">
-            <img src="{{asset('storage/uploads/gallery/508bbd_92adcedcd65b407797dd4a9df8cea118~mv2.webp')}}" class="h-[400px]">
-            <img src="{{asset('storage/uploads/gallery/508bbd_b01bd6069a514b92a44e9e664cfb68e9~mv2.webp')}}" class="h-[400px]">
-            <img src="{{asset('storage/uploads/gallery/508bbd_d297577c81c743b7904e2f30a6ef47a5~mv2.webp')}}" class="h-[400px]">
-
+            @foreach($growingRegion->galleries as $team)
+            <img src="{{asset("storage/uploads/{$team->file_url}")}}" class="h-[400px]" alt="{{$team->file_name}}">
+            @endforeach
         </div>
     </div>
+    @endif
 @endsection
 @push('scripts')
     <script>
@@ -122,6 +121,7 @@
             });
             @endif
 
+            @if(count($growingRegion->teams) > 0)
             $('#region-image-slider').slick({
                 autoplaySpeed: 800,
                 speed: 3000,
@@ -131,7 +131,7 @@
                 centerMode: false,
                 autoplay: true,
                 arrows: false,
-                pauseOnHover: true,
+                pauseOnHover: false,
                 dots: false,
                 adaptiveHeight: false,
                 mobileFirst: true,
@@ -152,6 +152,7 @@
                     },
             ]
             });
+            @endif
         })
     </script>
 @endpush
