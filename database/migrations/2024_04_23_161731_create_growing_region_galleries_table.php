@@ -17,7 +17,7 @@ return new class extends Migration
              $table->string('file_name');
              $table->string('file_extension');
              $table->string('file_url');
-             $table->float('file_size')->comment('File Size in Kb');
+             $table->float('file_size')->nullable()->comment('File Size in Kb');
              $table->timestamps();
         });
     }
