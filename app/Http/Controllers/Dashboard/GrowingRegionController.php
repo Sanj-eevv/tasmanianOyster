@@ -12,10 +12,8 @@ use App\Interfaces\GrowingRegionRepositoryInterface;
 use App\Models\GrowingRegion;
 use App\Services\Dashboard\GrowingRegionGalleryService;
 use App\Services\Dashboard\GrowingRegionService;
-use App\Services\Dashboard\TeamService;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class GrowingRegionController extends Controller
 {

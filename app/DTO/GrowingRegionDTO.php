@@ -7,7 +7,7 @@ use Illuminate\Http\UploadedFile;
 class GrowingRegionDTO
 {
      private function __construct(public string $title, public string $slug, public string $subtitle, public string $description, public ?string $characteristics,
-                                  public string $tastingNote, public UploadedFile|string|null $heroImage, public UploadedFile|string|null $heroImageSub,
+                                  public ?string $tastingNote, public UploadedFile|string|null $heroImage, public UploadedFile|string|null $heroImageSub,
                                   public bool   $isActive, public ?array $growingRegionGalleries, public array $teams){
 
      }

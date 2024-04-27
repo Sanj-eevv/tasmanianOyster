@@ -17,8 +17,8 @@ return new class extends Migration
              $table->string('slug');
              $table->string('subtitle');
              $table->longText('description');
-             $table->longText('characteristics');
-             $table->longText('tasting_note');
+             $table->longText('characteristics')->nullable();
+             $table->longText('tasting_note')->nullable();
              $table->string('hero_image');
              $table->string('hero_image_sub');
              $table->boolean('is_active')->default(true);

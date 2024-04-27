@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.admin')
-@section('title', 'John Reserve')
+@section('title', 'Gallery')
 @section('breadcrumb')
     @include('layouts.dashboard._partials._breadcrumb')
 @endsection

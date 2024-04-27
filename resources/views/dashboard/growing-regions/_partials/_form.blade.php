@@ -159,9 +159,9 @@
                 height : "300",
                 menubar: false,
                 toolbar: ["styleselect fontselect fontsizeselect",
-                    "forecolor | undo redo | cut copy paste | bold italic | alignleft aligncenter alignright alignjustify",
+                    "forecolor | undo redo | cut copy paste | bold italic | alignleft aligncenter alignright alignjustify | link",
                     "bullist numlist | outdent indent | blockquote subscript superscript | advlist | autolink | lists charmap | print preview | code"],
-                plugins : "advlist autolink lists charmap print preview code"
+                plugins : "advlist autolink lists charmap print preview code link"
             };
             tinymce.init({...options,  selector: "#description"})
             tinymce.init({...options,  selector: "#characteristics"});

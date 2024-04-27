@@ -35,7 +35,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'au
 Route::group(['prefix' => 'front', 'as' => 'front.'], function(){
      Route::post('contacts', [FrontContactController::class, 'store'])->name('contact.store');
      Route::get('john-reserve', [JohnReserveController::class, 'index'])->name('john-reserve.index');
-     Route::get('growing-region', [FrontGrowingRegionController::class, 'index'])->name('growing-region.index');
+     Route::get('growing-region/{slug}', [FrontGrowingRegionController::class, 'details'])->name('growing-region.details');
      Route::get('john-reserve/{slug}', [JohnReserveController::class, 'details'])->name('john-reserve.details');
      Route::get('story', [StoryController::class, 'index'])->name('story.index');
 });
