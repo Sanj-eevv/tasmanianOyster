@@ -33,15 +33,15 @@
             <img src="{{Vite::asset('resources/images/front/sustainability-hero.jpeg')}}" alt="Sustainability" class="cover-image h-full w-full">
         </div>
     </div>
-    <div class="bg-black min-h-[500px] relative py-8 pb-32"  style="background-repeat: no-repeat; background-size: cover; background-position: center; background-image: url('{{Vite::asset('resources/images/front/sustainability-hero-sub.jpeg')}}'">
+    <div class="bg-black min-h-[500px] relative py-8 pb-16 lg:pb-32"  style="background-repeat: no-repeat; background-size: cover; background-position: center; background-image: url('{{Vite::asset('resources/images/front/sustainability-hero-sub.jpeg')}}'">
         <div class="absolute top-0 bottom-0 right-0 left-0 bg-black/50 -z-10"></div>
         <div class="container text-white region-text">
             <h2 class="section-title text-center capitalize" data-aos="fade-up" data-aos-duration="2000">Sustainability</h2>
             <div class="description-div" data-aos="fade-up" data-aos-duration="1800">A world class shellfish company is governed by nature. Success only occurs in a pristine environment. We are the stewards of our coasts, seas and ecosystems.</div>
-            <div class="sustainability-teams text-white mt-8">
-                <h2 class="section-title text-center !font-light">Management Team</h2>
-                <div class="container mt-4">
-                    <div class="flex justify-center md:justify-between items-center gap-6 flex-wrap">
+            <div class="sustainability-teams text-white lg:mt-8">
+                <div class="container">
+                    <h2 class="section-title text-center !font-light">Management Team</h2>
+                    <div class="flex justify-center md:justify-between items-center gap-12 md:gap-6  flex-wrap">
                             <div class="flex flex-col items-center justify-center max-w-[220px]">
                                 <img src="{{Vite::asset('resources/images/front/sustainability-logo.png')}}" alt="Sustainability Logo"
                                      class="cover-image h-[220px] w-[220px]">
@@ -61,7 +61,7 @@
         <h2 class="section-title text-center !font-light !pb-0">Environmental Stewardship</h2>
         <span class="section-subtitle text-center block">Hover over each icon to learn more.</span>
         <div class="container mt-10">
-            <div class="flex justify-center md:justify-between items-start gap-2 flex-wrap">
+            <div class="flex justify-center sm:justify-between items-start gap-y-20 gap-x-8 lg:gap-2 flex-wrap">
                 <div class="flex items-center flex-col gap-4 max-w-[170px] environmental-stewardship relative">
                     <svg preserveAspectRatio="none" data-bbox="0 1.2 24 21.6" viewBox="0 1.2 24 21.6" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" class="h-[120px] w-[120px]">
                         <g>
@@ -73,8 +73,8 @@
                             <path d="m22.2 3.7-.2-.3c-.3-.4-.8-.6-1.3-.5-.5.1-1-.2-1.2-.6-.4-.7-1.1-1.1-1.8-1.1-.4 0-.9.1-1.2.4h-.1c-.4.3-.8.4-1.3.4h-.3c-.6 0-1.1.3-1.4.8l-.2.4c-.5.9-.8 2-.8 3.1 0 1 .2 1.9.7 2.8l.6 1.2v1.6c0 .6.2 1.1.7 1.5.3.3.5.6.6 1l.6 4.7c.1.5.5.8.9.8.2 0 .4-.1.6-.2l3.7-3.1c.9-.7 1.6-1.6 2.1-2.6.7-1.4 1.1-3 1.1-4.5 0-2.1-.6-4.1-1.8-5.8zm.2 5c-.1.3-.1.6-.2.9-.1.5-.2.8-.3 1.2-.3 1.1-.7 2-1.2 2.9-.4.8-.9 1.3-1.4 1.7-.4.3-.8.4-1.2.5-.7 0-1.1-.3-1.4-.6-.5-.5-.9-1.1-1.1-1.6-.1-.3-.3-.6-.4-.8-.3-.7-.6-1.4-.8-2.1-.1-.5-.3-.9-.4-1.6-.2-1-.4-2-.4-3.1v-.6c.2-1.2.7-1.9 1.7-2.3.6-.2 1.2-.4 1.7-.4s.9.1 1.3.2c1.2.4 2.3 1.3 3.1 2.5 1 .9 1.2 2 1 3.2z" fill="white"></path>
                         </g>
                     </svg>
-                    <span>Oyster Shells</span>
-                    <p>Oyster shells – traditionally a waste product – are being assessed by TOC for agricultural and health based Nutraceutical uses.</p>
+                    <span class="text-center">Oyster Shells</span>
+                    <p class="text-center">Oyster shells – traditionally a waste product – are being assessed by TOC for agricultural and health based Nutraceutical uses.</p>
                 </div>
                 <div class="flex items-center flex-col gap-4 max-w-[170px] environmental-stewardship relative">
                     <svg preserveAspectRatio="none" data-bbox="32 31.999 448 448.001" viewBox="32 31.999 448 448.001" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="" class="h-[120px] w-[120px]">
@@ -103,8 +103,8 @@
                             <path fill="white" d="m156.7 96-18.3-18.3 11.3-11.3 42.3 42.3V81.4c-2-4.9-3.3-10-3.8-15.3-1.9-19.4-18.2-34.2-37.7-34.1h-8.7C120.9 32 104 48.9 104 69.8v8.7c0 6.1 1.4 12.1 4.2 17.5h48.5z"></path>
                         </g>
                     </svg>
-                    <span>100% Complaint</span>
-                    <p>All TOC sites are 100% compliant with Food Safety HACCP audits, ensuring the world’s highest food safety standards are met.</p>
+                    <span class="text-center">100% Complaint</span>
+                    <p class="text-center">All TOC sites are 100% compliant with Food Safety HACCP audits, ensuring the world’s highest food safety standards are met.</p>
                 </div>
                 <div class="flex items-center flex-col gap-4 max-w-[170px] environmental-stewardship relative">
                     <svg preserveAspectRatio="none" data-bbox="4 4 56 56" viewBox="4 4 56 56" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="" class="h-[120px] w-[120px]">
@@ -112,8 +112,8 @@
                             <path fill="white" d="M60 56v4H4v-4h56zM7 54V10h2v44H7zm10-37v2h-6v-2h6zm-6-2v-5h6v5h-6zm6 6v8h-6v-8h6zm0 10v2h-6v-2h6zm0 4v7h-6v-7h6zm0 9v2h-6v-2h6zm0 4v6h-6v-6h6zm2 6V10h2v44h-2zm10-37v2h-6v-2h6zm-6-2v-5h6v5h-6zm6 6v8h-6v-8h6zm0 10v2h-6v-2h6zm0 4v7h-6v-7h6zm0 9v2h-6v-2h6zm0 4v6h-6v-6h6zm2 6V10h2v44h-2zm10-37v2h-6v-2h6zm-6-2v-5h6v5h-6zm6 6v8h-6v-8h6zm0 10v2h-6v-2h6zm0 4v7h-6v-7h6zm0 9v2h-6v-2h6zm0 4v6h-6v-6h6zm2 6V10h2v44h-2zm10-37v2h-6v-2h6zm-6-2v-5h6v5h-6zm6 6v8h-6v-8h6zm0 10v2h-6v-2h6zm0 4v7h-6v-7h6zm0 9v2h-6v-2h6zm0 4v6h-6v-6h6zm2 6V10h2v44h-2zM4 4h56v4H4V4z"></path>
                         </g>
                     </svg>
-                    <span>Certified Bio-Secure</span>
-                    <p>Our Hatcheries are certified bio-secure. This status is maintained with regular, detailed auditing to ensure compliance remains at a very high level.</p>
+                    <span class="text-center">Certified Bio-Secure</span>
+                    <p class="text-center">Our Hatcheries are certified bio-secure. This status is maintained with regular, detailed auditing to ensure compliance remains at a very high level.</p>
                 </div>
                 <div class="flex items-center flex-col gap-4 max-w-[170px] environmental-stewardship relative">
                     <svg preserveAspectRatio="none" data-bbox="1.9 2 56.1 56" viewBox="1.9 2 56.1 56" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="" class="h-[120px] w-[120px]">
@@ -134,8 +134,8 @@
                             <path fill="white" d="m15 34.8 1.4 3.6c1.1 1 2.5 1.6 4 1.6 1.6 0 3.1-.6 4.2-1.8C26 36.8 28 36 30 36c1 0 2.1.2 3 .6L30.2 29l-3.8 1.5 1.2 3c.2.5.2 1 0 1.5s-.6.9-1.1 1.1l-3.8 1.5c-1 .4-2.2-.1-2.6-1.2l-1.2-3-3.9 1.4z"></path>
                         </g>
                     </svg>
-                    <span>Regular Bay Clean-Ups</span>
-                    <p>Frequent and regular bay clean-ups by TOC, covering more than 23km of shoreline in FY21, helps to safeguard our pristine waterways.</p>
+                    <span class="text-center">Regular Bay Clean-Ups</span>
+                    <p class="text-center">Frequent and regular bay clean-ups by TOC, covering more than 23km of shoreline in FY21, helps to safeguard our pristine waterways.</p>
                 </div>
                 <div class="flex items-center flex-col gap-4 max-w-[170px] environmental-stewardship relative">
                     <svg preserveAspectRatio="none" data-bbox="0 0 89.5 90.9" viewBox="0 0 89.5 90.9" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="" class="h-[120px] w-[120px]">
@@ -145,20 +145,20 @@
                             <path fill="white" d="m78.2 38.5.3.7c.2.5.4 1 .6 1.4 1.4-1.5 5.1-6 7.4-12 0 0 .8 7.4-7.3 12.2.2.6.5 1.2.7 1.7 5.6-2.1 9.6-8.1 9.6-15.2 0-8.4-12.4-23.8-12.9-24.4l-1.2-1.5L74.3 3c-.3.4-5.2 6.5-8.9 13 .6.8 1.1 1.7 1.7 2.5 4 6.4 8.1 13.3 11.1 20z"></path>
                         </g>
                     </svg>
-                    <span>Organic Processes</span>
-                    <p>Our oysters feed on naturally occurring algae only. They are natural filters of the ocean. In fact, a single oyster can filter up to 190 litres of water a day.</p>
+                    <span class="text-center">Organic Processes</span>
+                    <p class="text-center">Our oysters feed on naturally occurring algae only. They are natural filters of the ocean. In fact, a single oyster can filter up to 190 litres of water a day.</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="bg-black min-h-[500px] relative py-32 pb-32 text-white"  style="background-repeat: no-repeat; background-size: cover; background-position: center; background-image: url('{{Vite::asset('resources/images/front/sustainability-oyster.jpeg')}}'">
+    <div class="bg-black min-h-[500px] relative py-16 md:py-32 text-white"  style="background-repeat: no-repeat; background-size: cover; background-position: center; background-image: url('{{Vite::asset('resources/images/front/sustainability-oyster.jpeg')}}'">
         <div class="overlay"></div>
         <div class="container">
-            <div class="flex w-full mx-auto gap-4 relative">
-                <div class="flex-1">
-                    <p class="text-2xl font-light">Every day, we are removing carbon from the atmosphere, as our 165m oysters sequester carbon into their shells. Every day, we are removing carbon from the atmosphere, as our 165m oysters seques</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 w-full gap-8 md:gap-6 lg:gap-4 relative">
+                <div>
+                    <p class="text-lg lg:text-2xl font-light">Every day, we are removing carbon from the atmosphere, as our 165m oysters sequester carbon into their shells. Every day, we are removing carbon from the atmosphere, as our 165m oysters seques</p>
                 </div>
-                <div class="flex-1 self-center flex justify-center">
+                <div class="self-center flex justify-center">
                     <svg preserveAspectRatio="none" data-bbox="2.9 5.9 58.1 52.1" viewBox="2.9 5.9 58.1 52.1" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" class="w-[280px] h-[280px]">
                         <g>
                             <path fill="white" d="M24.4 30.1c-.3-.6-.4-1.2-.4-1.8 0-.6-.2-1.1-.6-1.5l-2.1-2.1-6.5-5.5c-.1-.1-.3-.2-.4-.2-.3 0-.6.2-.7.5l-.3 1.6c-.3 1.3-.4 2.7-.4 4 0 2.7-.5 5.3-1.4 7.9-1 2.5-1.5 5.2-1.5 7.9l.3 1.2.2.7c.7 2.5 3 4.2 5.6 4.2 1 0 2.1-.3 3-.8l.8-.5 1 1.7-.8.5c-1.2.7-2.6 1.1-4 1.1-2.2 0-4.2-.9-5.6-2.4l.1.2c.7 2.5 3 4.2 5.6 4.2 1 0 2.1-.3 3-.8l.8-.5c1.4-.8 2.4-2.2 2.7-3.8l.3-1.4c.1-.6.4-1.2.7-1.6l.1-.2c1.5-1.9 2.3-4.4 2.3-6.8 0-1.7-.4-3.5-1.2-5.1l-.6-.7z"></path>
@@ -168,23 +168,23 @@
                         </g>
                     </svg>
                 </div>
-                <div class="flex-1">
-                    <span class="text-2xl mb-4 font-light block text-end">Oysters, a natural source of:</span>
+                <div>
+                    <span class="text-lg lg:text-2xl mb-4 font-light block text-end">Oysters, a natural source of:</span>
                     <div class="flex items-center gap-4 mb-4">
                         <div class="horizontal-line"><div class="arrow"></div></div>
-                        <span class="text-2xl font-light block text-end text-nowrap">Zinc</span>
+                        <span class="text-lg lg:text-2xl font-light block text-end text-nowrap">Zinc</span>
                     </div>
                     <div class="flex items-center gap-4 mb-4">
                         <div class="horizontal-line"><div class="arrow"></div></div>
-                        <span class="text-2xl font-light block text-end text-nowrap">Vitamin B12</span>
+                        <span class="text-lg lg:text-2xl font-light block text-end text-nowrap">Vitamin B12</span>
                     </div>
                     <div class="flex items-center gap-4 mb-4">
                         <div class="horizontal-line"><div class="arrow"></div></div>
-                        <span class="text-2xl font-light block text-end text-nowrap">Vitamin D</span>
+                        <span class="text-lg lg:text-2xl font-light block text-end text-nowrap">Vitamin D</span>
                     </div>
                     <div class="flex items-center gap-4 mb-4">
                         <div class="horizontal-line"><div class="arrow"></div></div>
-                        <span class="text-2xl font-light block text-end text-nowrap">Selenium</span>
+                        <span class="text-lg lg:text-2xl font-light block text-end text-nowrap">Selenium</span>
                     </div>
                 </div>
             </div>
