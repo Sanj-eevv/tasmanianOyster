@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
               GrowingRegionSeeder::class,
               TeamSeeder::class,
               GrowingRegionGallerySeeder::class,
+              PeopleSeeder::class,
          ]);
     }
 }

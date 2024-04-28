@@ -35,6 +35,11 @@
     object-position: center;
     max-width: 100%;
 }
+.contain-image{
+    object-fit: contain;
+    object-position: center;
+    max-width: 100%;
+}
 
 .absolute-center{
     left: 50%;
