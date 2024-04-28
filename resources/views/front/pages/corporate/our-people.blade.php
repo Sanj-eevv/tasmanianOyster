@@ -55,7 +55,7 @@
     <div class="section-gallery bg-black section-padding-bottom">
         <div class="container">
             <h3 class="section-title text-white aos-init aos-animate text-center" data-aos="fade-up" data-aos-duration="1800">
-                Gallery
+                Our People
             </h3>
             <div>
                 <div class="gallery-container">
