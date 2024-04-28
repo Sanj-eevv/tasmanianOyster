@@ -40,19 +40,19 @@
     </div>
     <div class="bg-black min-h-[500px] relative py-8 pb-32"  style="background-repeat: no-repeat; background-size: cover; background-position: center; background-image: url('{{asset("storage/uploads/{$growingRegion->hero_image_sub}")}}'">
         <div class="absolute top-0 bottom-0 right-0 left-0 bg-black/50 -z-10"></div>
-        <div class="container text-white region-text">
+        <div class="container text-white region-text overflow-hidden">
             <h2 class="section-title text-center capitalize" data-aos="fade-up" data-aos-duration="2000">{{$growingRegion->subtitle}}</h2>
             <div class="description-div" data-aos="fade-up" data-aos-duration="1800">{!! $growingRegion->description !!}</div>
             @if($growingRegion->characteristics || $growingRegion->tasting_note)
             <div class="flex gap-16">
                 @if($growingRegion->characteristics)
-                <div class="flex-1">
+                <div class="flex-1" data-aos="fade-right" data-aos-duration="1800">
                     <h2 class="section-title !font-medium">Region Characteristics</h2>
                     {!! $growingRegion->characteristics !!}
                 </div>
                 @endif
                 @if($growingRegion->tasting_note)
-                <div class="flex-1">
+                <div class="flex-1" data-aos="fade-left" data-aos-duration="1800">
                     <h2 class="section-title !font-medium">Tasting Notes</h2>
                     {!! $growingRegion->tasting_note !!}
                 </div>

@@ -36,18 +36,18 @@
     <div class="bg-black min-h-[500px] relative py-8 pb-16 lg:pb-32"  style="background-repeat: no-repeat; background-size: cover; background-position: center; background-image: url('{{Vite::asset('resources/images/front/sustainability-hero-sub.jpeg')}}'">
         <div class="absolute top-0 bottom-0 right-0 left-0 bg-black/50 -z-10"></div>
         <div class="container text-white region-text">
-            <h2 class="section-title text-center capitalize" data-aos="fade-up" data-aos-duration="2000">Sustainability</h2>
+            <h2 class="section-title text-center capitalize" data-aos="fade-up" data-aos-duration="1600">Sustainability</h2>
             <div class="description-div" data-aos="fade-up" data-aos-duration="1800">A world class shellfish company is governed by nature. Success only occurs in a pristine environment. We are the stewards of our coasts, seas and ecosystems.</div>
-            <div class="sustainability-teams text-white lg:mt-8">
+            <div class="sustainability-teams text-white lg:mt-8 overflow-hidden">
                 <div class="container">
-                    <h2 class="section-title text-center !font-light">Management Team</h2>
+                    <h2 class="section-title text-center !font-light" data-aos="fade-up" data-aos-duration="2000">Management Team</h2>
                     <div class="flex justify-center md:justify-between items-center gap-12 md:gap-6  flex-wrap">
-                            <div class="flex flex-col items-center justify-center max-w-[220px]">
+                            <div class="flex flex-col items-center justify-center max-w-[220px]" data-aos="fade-right" data-aos-duration="2000">
                                 <img src="{{Vite::asset('resources/images/front/sustainability-logo.png')}}" alt="Sustainability Logo"
                                      class="cover-image h-[220px] w-[220px]">
                                 <span class="role capitalize block text-center mt-2">Friends of the Sea certification with the World Sustainability Organisation</span>
                             </div>
-                            <div class="flex flex-col items-center justify-center max-w-[220px]">
+                            <div class="flex flex-col items-center justify-center max-w-[220px]" data-aos="fade-left" data-aos-duration="2000">
                                 <img src="{{Vite::asset('resources/images/front/sustainability-logo-2.jpeg')}}" alt="Sustainability Logo 2"
                                      class="cover-image w-[220px]">
                                 <span class="role capitalize block text-center mt-2">Only Tasmanian Organic Oyster Company status from the National Association for Sustainable Agriculture Australia (NASAA)</span>
@@ -62,7 +62,7 @@
         <span class="section-subtitle text-center block">Hover over each icon to learn more.</span>
         <div class="container mt-10">
             <div class="flex justify-center sm:justify-between items-start gap-y-20 gap-x-8 lg:gap-2 flex-wrap">
-                <div class="flex items-center flex-col gap-4 max-w-[170px] environmental-stewardship relative">
+                <div class="flex items-center flex-col gap-4 max-w-[170px] environmental-stewardship relative" data-aos="fade-up" data-aos-duration="900">
                     <svg preserveAspectRatio="none" data-bbox="0 1.2 24 21.6" viewBox="0 1.2 24 21.6" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" class="h-[120px] w-[120px]">
                         <g>
                             <path d="M20.8 5.8c-.7-1-1.5-1.7-2.5-2-.4-.2-.8-.2-1.1-.2-.5 0-.8.1-1.2.2-.8.2-1.2.8-1.4 1.7-.2.9 0 1.9.2 2.7v.1c0 .2.1.4.1.7.2-.6.5-1.2.9-1.8.7-.9 1.7-1.4 2.8-1.4 1 0 2 .5 2.7 1.2.1.1.1.1.1.2 0-.6-.3-1-.6-1.4z" fill="white"></path>
@@ -76,7 +76,7 @@
                     <span class="text-center">Oyster Shells</span>
                     <p class="text-center">Oyster shells – traditionally a waste product – are being assessed by TOC for agricultural and health based Nutraceutical uses.</p>
                 </div>
-                <div class="flex items-center flex-col gap-4 max-w-[170px] environmental-stewardship relative">
+                <div class="flex items-center flex-col gap-4 max-w-[170px] environmental-stewardship relative" data-aos="fade-up" data-aos-duration="1200">
                     <svg preserveAspectRatio="none" data-bbox="32 31.999 448 448.001" viewBox="32 31.999 448 448.001" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="" class="h-[120px] w-[120px]">
                         <g>
                             <path fill="white" d="M236.5 190.8c-28.6 28.4-44.6 67.1-44.5 107.5 0 12 9.7 21.7 21.7 21.7 40.3.1 79-15.9 107.5-44.5l33.7-33.7c16.5-16.6 38.9-25.8 62.2-25.8h36.1c3.5 0 6.4-2.9 6.4-6.4 0-1.7-.7-3.3-1.9-4.5a71.983 71.983 0 0 0-50.9-21.1H336c-28.6-.1-56.1 11.3-76.3 31.6l-4.1 4.1c-20.3 20.2-31.7 47.7-31.6 76.3h-16c-.1-32.9 13-64.4 36.3-87.6l4.1-4.1c21.2-21.3 49.5-34.2 79.6-36v-63.1c.1-19.1-7.5-37.4-21.1-50.9-1.1-1.2-2.7-1.9-4.4-1.9-.9 0-1.7.2-2.6.5-2.4 1-4 3.3-3.9 5.9v36.1c.1 23.4-9.2 45.8-25.8 62.2l-33.7 33.7z"></path>
@@ -106,7 +106,7 @@
                     <span class="text-center">100% Complaint</span>
                     <p class="text-center">All TOC sites are 100% compliant with Food Safety HACCP audits, ensuring the world’s highest food safety standards are met.</p>
                 </div>
-                <div class="flex items-center flex-col gap-4 max-w-[170px] environmental-stewardship relative">
+                <div class="flex items-center flex-col gap-4 max-w-[170px] environmental-stewardship relative" data-aos="fade-up" data-aos-duration="1500">
                     <svg preserveAspectRatio="none" data-bbox="4 4 56 56" viewBox="4 4 56 56" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="" class="h-[120px] w-[120px]">
                         <g>
                             <path fill="white" d="M60 56v4H4v-4h56zM7 54V10h2v44H7zm10-37v2h-6v-2h6zm-6-2v-5h6v5h-6zm6 6v8h-6v-8h6zm0 10v2h-6v-2h6zm0 4v7h-6v-7h6zm0 9v2h-6v-2h6zm0 4v6h-6v-6h6zm2 6V10h2v44h-2zm10-37v2h-6v-2h6zm-6-2v-5h6v5h-6zm6 6v8h-6v-8h6zm0 10v2h-6v-2h6zm0 4v7h-6v-7h6zm0 9v2h-6v-2h6zm0 4v6h-6v-6h6zm2 6V10h2v44h-2zm10-37v2h-6v-2h6zm-6-2v-5h6v5h-6zm6 6v8h-6v-8h6zm0 10v2h-6v-2h6zm0 4v7h-6v-7h6zm0 9v2h-6v-2h6zm0 4v6h-6v-6h6zm2 6V10h2v44h-2zm10-37v2h-6v-2h6zm-6-2v-5h6v5h-6zm6 6v8h-6v-8h6zm0 10v2h-6v-2h6zm0 4v7h-6v-7h6zm0 9v2h-6v-2h6zm0 4v6h-6v-6h6zm2 6V10h2v44h-2zM4 4h56v4H4V4z"></path>
@@ -115,7 +115,7 @@
                     <span class="text-center">Certified Bio-Secure</span>
                     <p class="text-center">Our Hatcheries are certified bio-secure. This status is maintained with regular, detailed auditing to ensure compliance remains at a very high level.</p>
                 </div>
-                <div class="flex items-center flex-col gap-4 max-w-[170px] environmental-stewardship relative">
+                <div class="flex items-center flex-col gap-4 max-w-[170px] environmental-stewardship relative" data-aos="fade-up" data-aos-duration="1800">
                     <svg preserveAspectRatio="none" data-bbox="1.9 2 56.1 56" viewBox="1.9 2 56.1 56" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="" class="h-[120px] w-[120px]">
                         <g>
                             <path fill="white" d="M54 53a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
@@ -137,7 +137,7 @@
                     <span class="text-center">Regular Bay Clean-Ups</span>
                     <p class="text-center">Frequent and regular bay clean-ups by TOC, covering more than 23km of shoreline in FY21, helps to safeguard our pristine waterways.</p>
                 </div>
-                <div class="flex items-center flex-col gap-4 max-w-[170px] environmental-stewardship relative">
+                <div class="flex items-center flex-col gap-4 max-w-[170px] environmental-stewardship relative" data-aos="fade-up" data-aos-duration="2100">
                     <svg preserveAspectRatio="none" data-bbox="0 0 89.5 90.9" viewBox="0 0 89.5 90.9" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="" class="h-[120px] w-[120px]">
                         <g>
                             <path fill="white" d="M15.6 29S0 48.2 0 58.1C0 67.9 7.1 76 15.6 76s15.6-8.1 15.6-17.9c0-9.9-15.6-29.1-15.6-29.1zm3.6 43.8s5.8-5.8 9-14.2c0 .1 1 8.9-9 14.2z"></path>
@@ -151,14 +151,14 @@
             </div>
         </div>
     </div>
-    <div class="bg-black min-h-[500px] relative py-16 md:py-32 text-white"  style="background-repeat: no-repeat; background-size: cover; background-position: center; background-image: url('{{Vite::asset('resources/images/front/sustainability-oyster.jpeg')}}'">
+    <div class="bg-black min-h-[500px] relative py-16 md:py-32 text-white overflow-hidden"  style="background-repeat: no-repeat; background-size: cover; background-position: center; background-image: url('{{Vite::asset('resources/images/front/sustainability-oyster.jpeg')}}'">
         <div class="overlay"></div>
         <div class="container">
             <div class="grid grid-cols-1 md:grid-cols-3 w-full gap-8 md:gap-6 lg:gap-4 relative">
-                <div>
+                <div data-aos="fade-right" data-aos-duration="1800">
                     <p class="text-lg lg:text-2xl font-light">Every day, we are removing carbon from the atmosphere, as our 165m oysters sequester carbon into their shells. Every day, we are removing carbon from the atmosphere, as our 165m oysters seques</p>
                 </div>
-                <div class="self-center flex justify-center">
+                <div class="self-center flex justify-center" data-aos="fade-up" data-aos-duration="2000">
                     <svg preserveAspectRatio="none" data-bbox="2.9 5.9 58.1 52.1" viewBox="2.9 5.9 58.1 52.1" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" class="w-[280px] h-[280px]">
                         <g>
                             <path fill="white" d="M24.4 30.1c-.3-.6-.4-1.2-.4-1.8 0-.6-.2-1.1-.6-1.5l-2.1-2.1-6.5-5.5c-.1-.1-.3-.2-.4-.2-.3 0-.6.2-.7.5l-.3 1.6c-.3 1.3-.4 2.7-.4 4 0 2.7-.5 5.3-1.4 7.9-1 2.5-1.5 5.2-1.5 7.9l.3 1.2.2.7c.7 2.5 3 4.2 5.6 4.2 1 0 2.1-.3 3-.8l.8-.5 1 1.7-.8.5c-1.2.7-2.6 1.1-4 1.1-2.2 0-4.2-.9-5.6-2.4l.1.2c.7 2.5 3 4.2 5.6 4.2 1 0 2.1-.3 3-.8l.8-.5c1.4-.8 2.4-2.2 2.7-3.8l.3-1.4c.1-.6.4-1.2.7-1.6l.1-.2c1.5-1.9 2.3-4.4 2.3-6.8 0-1.7-.4-3.5-1.2-5.1l-.6-.7z"></path>
@@ -168,7 +168,7 @@
                         </g>
                     </svg>
                 </div>
-                <div>
+                <div data-aos="fade-left" data-aos-duration="1800">
                     <span class="text-lg lg:text-2xl mb-4 font-light block text-end">Oysters, a natural source of:</span>
                     <div class="flex items-center gap-4 mb-4">
                         <div class="horizontal-line"><div class="arrow"></div></div>

@@ -10,7 +10,7 @@ class StoryController extends Controller
 {
      public function __construct(protected StoryService $storyService){}
 
-     public function index(){
+     public function __invoke(){
           $view_data['stories'] = $this->storyService->all();
           return view('front.pages.story.index')->with($view_data);
      }

@@ -108,6 +108,19 @@
                 </div>
                 <!--end:Menu item-->
 
+                <!--begin:Menu item-->
+                <div class="menu-item">
+                    <!--begin:Menu link-->
+                    <a class="menu-link {{current_page('people') ? 'active' : '' }}" href="{{ route('dashboard.people.index') }}">
+                         <span class="menu-icon">
+                             <i class="fas fa-people-carry"></i>
+                        </span>
+                        <span class="menu-title">People</span>
+                    </a>
+                    <!--end:Menu link-->
+                </div>
+                <!--end:Menu item-->
+
 
                 <!--begin:Menu item-->
                 <div class="menu-item">

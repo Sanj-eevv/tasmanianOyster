@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.admin')
-@section('title', 'Gallery')
+@section('title', 'Our People')
 @section('breadcrumb')
     @include('layouts.dashboard._partials._breadcrumb')
 @endsection
@@ -19,7 +19,7 @@
             <!--begin::Input group-->
             <div class="fv-row">
                 <!--begin::Dropzone-->
-                <div class="dropzone" id="galleries_upload">
+                <div class="dropzone" id="people_upload">
                     <!--begin::Message-->
                     <div class="dz-message needsclick">
                         <i class="ki-duotone ki-file-up fs-3x text-primary"><span class="path1"></span><span class="path2"></span></i>
@@ -40,8 +40,8 @@
 @section('scripts')
     <script>
         $( document ).ready(function( $ ) {
-            let myDropzone = new Dropzone("#galleries_upload", {
-                url: "{{route('dashboard.galleries.store')}}",
+            let myDropzone = new Dropzone("#people_upload", {
+                url: "{{route('dashboard.people.store')}}",
                 paramName: "file",
                 maxFilesize: 10,
                 addRemoveLinks: true,
@@ -61,7 +61,7 @@
                         cancelButtonText: "Cancel",
                     }).then((result) => {
                         if (result.value) {
-                            let url = "{{route('dashboard.galleries.destroy', ':id')}}";
+                            let url = "{{route('dashboard.people.destroy', ':id')}}";
                             url = url.replace(':id', file.id);
                             $.ajax({
                                 "url": url,
@@ -84,8 +84,8 @@
                 },
                 init: function () {
                     let existingFiles = [
-                            @foreach($allFiles as $file)
-                                {id: {{$file->id}}, name: "{{$file->file_name}}", size: {{$file->file_size}}, url: "{{asset('storage/uploads/'.$file->file_url)}}" },
+                            @foreach($allPeople as $people)
+                                {id: {{$people->id}}, name: "{{$people->file_name}}", size: {{$people->file_size}}, url: "{{asset('storage/uploads/'.$people->file_url)}}" },
                             @endforeach
                     ];
 

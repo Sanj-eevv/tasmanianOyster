@@ -27,23 +27,23 @@
 @endpush
 @section('content')
     <div class="bg-black text-white">
-        <div class="container john-reserve-detail">
+        <div class="container john-reserve-detail overflow-hidden">
             <div class="flex flex-col lg:flex-row lg:gap-24 pt-3">
                 <div class="lg:min-h-[500px] lg:max-h-[700px] flex-1">
                     <img src="{{asset("storage/uploads/$johnReserve->hero_image")}}" alt="John Reserve Details"
-                         class="cover-image h-full h-[400px] w-[450px] lg:h-full lg:w-full mx-auto">
+                         class="cover-image h-full h-[400px] w-[450px] lg:h-full lg:w-full mx-auto" data-aos="fade-right" data-aos-duration="1800">
                 </div>
                 <div class="flex-1 pt-10">
                     <div class="relative py-6 lg:py-8 bg-black lg:-left-3/4 lg:pl-20 lg:mb-8">
-                        <h1 class="hero-title whitespace-nowrap text-center">{{$johnReserve->title}}</h1>
+                        <h1 class="hero-title whitespace-nowrap text-center" data-aos="fade-left" data-aos-duration="1800">{{$johnReserve->title}}</h1>
                     </div>
-                    <p class="tracking-wide font-extralight leading-8 text-justify">
+                    <p class="tracking-wide font-extralight leading-8 text-justify" data-aos="fade-up" data-aos-duration="2000">
                         {{$johnReserve->description}}
                     </p>
                 </div>
             </div>
         </div>
-         <div class="container relative py-12">
+         <div class="container relative py-12 overflow-hidden" data-aos="fade-up" data-aos-duration="1800">
             @include('front.pages.john-reserve._range_slider', [
                      'slider_title' => 'Umani',
                      'label_1' => 'Low',
