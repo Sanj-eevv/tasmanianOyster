@@ -16,6 +16,12 @@
     }
 }
 
+@layer utilities {
+    .overlay{
+        @apply absolute inset-0 bg-black/40
+    }
+}
+
 .section-title{
     font-size: 36px;
     font-weight: 700;
@@ -119,7 +125,7 @@ textarea.contact-form-input{
     margin-top: 50px;
 }
 
-/*Footer*/
+
 @layer components {
     .section-margin-top{
         @apply mt-[50px] sm:mt-[100px];
@@ -133,6 +139,7 @@ textarea.contact-form-input{
     .section-padding-bottom{
         @apply pb-[50px] sm:pb-[100px];
     }
+    /*Footer*/
     .footer-social {
         @apply h-[30px] w-[30px] flex justify-center items-center rounded-full bg-white text-black
     }

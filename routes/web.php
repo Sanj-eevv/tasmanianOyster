@@ -13,6 +13,7 @@ use App\Http\Controllers\Dashboard\JohnReserveController as DashboardJohnReserve
 
 use App\Http\Controllers\Front\StoryController;
 use \App\Http\Controllers\Dashboard\StoryController as DashboardStoryController;
+use App\Http\Controllers\Front\SustainabilityController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -38,4 +39,6 @@ Route::group(['prefix' => 'front', 'as' => 'front.'], function(){
      Route::get('growing-region/{slug}', [FrontGrowingRegionController::class, 'details'])->name('growing-region.details');
      Route::get('john-reserve/{slug}', [JohnReserveController::class, 'details'])->name('john-reserve.details');
      Route::get('story', [StoryController::class, 'index'])->name('story.index');
+     Route::get('sustainability', SustainabilityController::class)->name('sustainability.index');
+
 });
