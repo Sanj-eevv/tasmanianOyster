@@ -22,8 +22,8 @@ class BoardExecutiveController extends Controller
               $columns = [
                    'id',
                    'name',
-                   'role',
                    'image',
+                   'role',
                    'created_at',
               ];
               $meta = AppHelper::defaultTableInput([

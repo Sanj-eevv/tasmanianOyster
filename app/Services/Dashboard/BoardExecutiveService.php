@@ -19,6 +19,7 @@ class BoardExecutiveService
      {
           return $this->boardExecutiveRepository->all();
      }
+
      public function find(string|int $id) : Model|Collection|Builder|array|null
      {
           return $this->boardExecutiveRepository->find(id: $id);
@@ -42,7 +43,7 @@ class BoardExecutiveService
 
           !empty($currentImageName) && Storage::delete(paths:"public/uploads/$currentImageName");
 
-          $imageName = renameImageFileUpload(file: $newImage);
+          $imageName = renameFileUpload(file: $newImage);
           $newImage->storeAs(path:'public/uploads/board-executive', name: $imageName);
           return "board-executive/$imageName";
      }

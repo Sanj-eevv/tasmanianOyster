@@ -11,7 +11,9 @@ export default {
       padding: '1rem',
     },
     extend: {
-
+      screens: {
+        'xsm': '480px',
+      }
     },
   },
   plugins: [],

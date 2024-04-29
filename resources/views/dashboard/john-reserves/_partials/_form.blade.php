@@ -34,7 +34,7 @@
         <input type="file" name="hero_image" onchange="loadPreview(this);" accept="image/*"
                class="form-control form-control-solid @error('hero_image') is-invalid @enderror" id="hero_image"/>
         <div class="kt_preview_image_container {{(empty($johnReserve->hero_image)) ? 'd-none' : ''}}">
-            <img  alt="logo" id="kt_preview_img" src="{{(empty($johnReserve->hero_image))?'': asset('storage/uploads/'.$johnReserve->hero_image)}}"
+            <img  alt="Preview Image" id="kt_preview_img" src="{{(empty($johnReserve->hero_image))?'': asset('storage/uploads/'.$johnReserve->hero_image)}}"
                   class="img-fluid kt_preview_img"/>
         </div>
         @error('hero_image')

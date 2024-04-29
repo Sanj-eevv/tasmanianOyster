@@ -27,6 +27,8 @@ class GrowingRegionController extends Controller
               $columns = [
                    'id',
                    'title',
+                   'hero_image',
+                   'hero_image_sub',
                    'created_at',
               ];
               $meta = AppHelper::defaultTableInput(input: [

@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.admin')
-@section('title', 'Board & Executive')
+@section('title', 'Publication')
 @section('breadcrumb')
     @include('layouts.dashboard._partials._breadcrumb')
 @endsection
@@ -8,13 +8,13 @@
         <!--begin::Card header-->
         <div class="card-header">
             <div class="card-title">
-                <h2>Board & Executive</h2>
+                <h2>Edit Publication</h2>
             </div>
             <!--begin::Card toolbar-->
             <div class="card-toolbar">
                 <!--begin::Toolbar-->
                 <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
-                    <a href="{{route('dashboard.board-executives.index')}}" class="btn btn-light-dark btn-sm">
+                    <a href="{{route('dashboard.publications.index')}}" class="btn btn-light-dark btn-sm">
                         Back
                     </a>
                 </div>
@@ -26,9 +26,10 @@
         <!--begin::Card body-->
         <div class="card-body pt-5">
             <!--begin:Form-->
-            <form id="create_board_executive_form" class="form" action="{{route('dashboard.board-executives.store')}}" method="POST" enctype="multipart/form-data">
+            <form id="update_john_reserve_form" class="form" action="{{route('dashboard.publications.update', $publication)}}" method="POST" enctype="multipart/form-data">
+                @method('PUT')
                 @csrf
-                @include('dashboard.board-executives._partials._form',['buttonText' => 'Create'])
+                @include('dashboard.publications._partials._form',['buttonText' => 'Update'])
             </form>
             <!--end:Form-->
         </div>

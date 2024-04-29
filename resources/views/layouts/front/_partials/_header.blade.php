@@ -14,7 +14,8 @@
                             <li class="hover:bg-white bg-black/60 hover:text-black duration-300 ease-linear"><a href="{{route('front.our-people.index')}}" class="px-[20px] py-[8px] whitespace-nowrap first-of-type:rounded-t-lg text-sm font-medium capitalize inline-block w-full">Our People</a> </li>
                             <li class="hover:bg-white bg-black/60 hover:text-black duration-300 ease-linear"><a href="{{route('front.quality-grading.index')}}" class="px-[20px] py-[8px] whitespace-nowrap first-of-type:rounded-t-lg text-sm font-medium capitalize inline-block w-full">Quality Grading System</a> </li>
                             <li class="hover:bg-white bg-black/60 hover:text-black duration-300 ease-linear"><a href="{{route('front.board-executive.index')}}" class="px-[20px] py-[8px] whitespace-nowrap first-of-type:rounded-t-lg text-sm font-medium capitalize inline-block w-full">Board & Executive</a> </li>
-                            <li class="hover:bg-white bg-black/60 hover:text-black duration-300 ease-linear"><a href="{{route('front.investors.index')}}" class="px-[20px] py-[8px] whitespace-nowrap first-of-type:rounded-t-lg text-sm font-medium capitalize inline-block w-full">Investors</a> </li>
+                            <li class="hover:bg-white bg-black/60 hover:text-black duration-300 ease-linear"><a href="{{route('front.investor.index')}}" class="px-[20px] py-[8px] whitespace-nowrap first-of-type:rounded-t-lg text-sm font-medium capitalize inline-block w-full">Investors</a> </li>
+                            <li class="hover:bg-white bg-black/60 hover:text-black duration-300 ease-linear"><a href="{{route('front.publication.index')}}" class="px-[20px] py-[8px] whitespace-nowrap first-of-type:rounded-t-lg text-sm font-medium capitalize inline-block w-full">Publications</a> </li>
                         </ul>
                     </div>
                 </li>

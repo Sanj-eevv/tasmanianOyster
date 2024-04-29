@@ -48,7 +48,7 @@
         <input type="file" name="image" onchange="loadPreview(this);" accept="image/*"
                class="form-control form-control-solid @error('image') is-invalid @enderror" id="image"/>
         <div class="kt_preview_image_container {{(empty($boardExecutive->image)) ? 'd-none' : ''}}">
-            <img  alt="logo" id="kt_preview_img" src="{{(empty($boardExecutive->image))?'': asset('storage/uploads/'.$boardExecutive->image)}}"
+            <img  alt="Preview Image" id="kt_preview_img" src="{{(empty($boardExecutive->image))?'': asset('storage/uploads/'.$boardExecutive->image)}}"
                   class="img-fluid kt_preview_img"/>
         </div>
         @error('image')

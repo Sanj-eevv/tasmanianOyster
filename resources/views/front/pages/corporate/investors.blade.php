@@ -25,7 +25,7 @@
                 </p>
             </div>
             <h2 class="section-title capitalize" data-aos="fade-up" data-aos-duration="1800">Interested In Learning More?</h2>
-            <div class="description-div text-lg" data-aos="fade-up" data-aos-duration="1500">
+            <div class="description-div text-lg" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="60">
                <span class="uppercase block">{{config('app.admin.name')}} | CEO</span>
                 <p>Phone: <span>{{config('app.settings.company_phone')}}</span></p>
                 <p>Address: <span>{{config('app.settings.company_address')}}</span></p>

@@ -41,4 +41,8 @@ class CorporateController extends Controller
      public function investors(){
           return view('front.pages.corporate.investors');
      }
+
+     public function publications(){
+          return view('front.pages.corporate.publications');
+     }
 }

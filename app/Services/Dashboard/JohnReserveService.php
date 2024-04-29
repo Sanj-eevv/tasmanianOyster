@@ -47,7 +47,7 @@ class JohnReserveService
 
           !empty($currentImageName) && Storage::delete("public/uploads/$currentImageName");
 
-          $imageName = renameImageFileUpload($newImage);
+          $imageName = renameFileUpload($newImage);
           $newImage->storeAs('public/uploads/john-reserve', $imageName);
           return "john-reserve/$imageName";
      }

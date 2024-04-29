@@ -81,7 +81,7 @@
         <input type="file" name="hero_image" onchange="loadPreview(this);" accept="image/*"
                class="form-control form-control-solid" id="hero_image"/>
         <div class="kt_preview_image_container {{(empty($growingRegion->hero_image)) ? 'd-none' : ''}}">
-            <img  alt="logo" id="kt_preview_img" src="{{(empty($growingRegion->hero_image))?'': asset('storage/uploads/'.$growingRegion->hero_image)}}"
+            <img  alt="Preview Image" id="kt_preview_img" src="{{(empty($growingRegion->hero_image))?'': asset('storage/uploads/'.$growingRegion->hero_image)}}"
                   class="img-fluid kt_preview_img"/>
         </div>
         <span class="invalid-feedback" id="hero_image_error" role="alert">
@@ -98,7 +98,7 @@
         <input type="file" name="hero_image_sub" onchange="loadPreview(this,'#kt_preview_img_hero_sub');" accept="image/*"
                class="form-control form-control-solid" id="hero_image_sub"/>
         <div class="kt_preview_image_container {{(empty($growingRegion->hero_image_sub)) ? 'd-none' : ''}}">
-            <img  alt="logo" id="kt_preview_img_hero_sub" src="{{(empty($growingRegion->hero_image_sub))?'': asset('storage/uploads/'.$growingRegion->hero_image_sub)}}"
+            <img  alt="Preview Image" id="kt_preview_img_hero_sub" src="{{(empty($growingRegion->hero_image_sub))?'': asset('storage/uploads/'.$growingRegion->hero_image_sub)}}"
                   class="img-fluid kt_preview_img"/>
         </div>
         <span class="invalid-feedback" role="alert" id="hero_image_sub_error"></span>

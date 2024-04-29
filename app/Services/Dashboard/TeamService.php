@@ -41,7 +41,7 @@ class TeamService
 
           !empty($currentImageName) && Storage::delete(paths:"public/uploads/$currentImageName");
 
-          $imageName = renameImageFileUpload(file: $newImage);
+          $imageName = renameFileUpload(file: $newImage);
           $newImage->storeAs(path: 'public/uploads/growing-region/team', name: $imageName);
           return "growing-region/team/$imageName";
      }

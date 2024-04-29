@@ -101,7 +101,7 @@ class GrowingRegionService
 
           !empty($currentImageName) && Storage::delete(paths:"public/uploads/$currentImageName");
 
-          $imageName = renameImageFileUpload(file: $newImage);
+          $imageName = renameFileUpload(file: $newImage);
           $newImage->storeAs(path:'public/uploads/growing-region', name: $imageName);
           return "growing-region/$imageName";
      }

@@ -16,13 +16,13 @@ class JohnReserveController extends Controller
 {
      public function __construct(protected JohnReserveRepositoryInterface $johnReserveRepository, protected JohnReserveService $johnReserveService){}
 
-
     public function index(Request $request)
     {
          if ($request->ajax()) {
               $columns = [
                    'id',
                    'title',
+                   'hero_image',
                    'created_at',
               ];
               $meta = AppHelper::defaultTableInput([

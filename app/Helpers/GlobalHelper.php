@@ -40,9 +40,9 @@ if (!function_exists('current_page')) {
           return false;
      }
 }
-if (!function_exists('renameImageFileUpload'))
+if (!function_exists('renameFileUpload'))
 {
-     function renameImageFileUpload(UploadedFile $file) : string
+     function renameFileUpload(UploadedFile $file) : string
      {
           $imageName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
           return Str::of($imageName)->slug('_').'_'.uniqid().'.'.$file->extension();

@@ -61,7 +61,7 @@
                     <!--begin:Menu link-->
                     <a class="menu-link {{current_page('board-executives') ? 'active' : '' }}" href="{{ route('dashboard.board-executives.index') }}">
                          <span class="menu-icon">
-                            <i class="fas fa-address-book"></i>
+                            <i class="fas fa-users-cog"></i>
                         </span>
                         <span class="menu-title">Board & Executives</span>
                     </a>
@@ -129,6 +129,19 @@
                              <i class="fas fa-people-carry"></i>
                         </span>
                         <span class="menu-title">People</span>
+                    </a>
+                    <!--end:Menu link-->
+                </div>
+                <!--end:Menu item-->
+
+                <!--begin:Menu item-->
+                <div class="menu-item">
+                    <!--begin:Menu link-->
+                    <a class="menu-link {{current_page('publications') ? 'active' : '' }}" href="{{ route('dashboard.publications.index') }}">
+                         <span class="menu-icon">
+                            <i class="fas fa-book-open"></i>
+                        </span>
+                        <span class="menu-title">Publications</span>
                     </a>
                     <!--end:Menu link-->
                 </div>
