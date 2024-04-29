@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\BoardExecutiveController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\GalleryController;
 use App\Http\Controllers\Dashboard\GrowingRegionController;
@@ -25,6 +26,7 @@ Route::get('/', HomeController::class)->name('front.index');
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'auth'], function(){
      Route::get('/', DashboardController::class)->name('index');
 
+     Route::resource('board-executives', BoardExecutiveController::class);
      Route::get('contacts', [ContactController::class, 'index'])->name('contact.index');
      Route::get('contacts/{contact}', [ContactController::class, 'show'])->name('contact.show');
      Route::delete('contacts/{contact}', [ContactController::class, 'destroy'])->name('contact.destroy');

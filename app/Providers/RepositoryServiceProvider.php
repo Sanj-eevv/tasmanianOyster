@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace App\Providers;
 
 use App\Interfaces\BaseRepositoryInterface;
+use App\Interfaces\BoardExecutiveRepositoryInterface;
 use App\Interfaces\ContactRepositoryInterface;
 use App\Interfaces\GalleryRepositoryInterface;
 use App\Interfaces\GrowingRegionGalleryRepositoryInterface;
@@ -15,6 +16,7 @@ use App\Interfaces\StoryRepositoryInterface;
 use App\Interfaces\TeamRepositoryInterface;
 use App\Models\GrowingRegion;
 use App\Repositories\BaseRepository;
+use App\Repositories\BoardExecutiveRepository;
 use App\Repositories\ContactRepository;
 use App\Repositories\GalleryRepository;
 use App\Repositories\GrowingRegionGalleryRepository;
@@ -42,6 +44,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function boot(): void
     {
          $this->app->bind(BaseRepositoryInterface::class, BaseRepository::class);
+         $this->app->bind(BoardExecutiveRepositoryInterface::class, BoardExecutiveRepository::class);
          $this->app->bind(ContactRepositoryInterface::class, ContactRepository::class);
          $this->app->bind(GalleryRepositoryInterface::class, GalleryRepository::class);
          $this->app->bind(GrowingRegionRepositoryInterface::class, GrowingRegionRepository::class);
