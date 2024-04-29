@@ -15,6 +15,10 @@ class BoardExecutiveService
 {
      public function __construct(protected BoardExecutiveRepositoryInterface $boardExecutiveRepository){}
 
+     public function all() : Collection
+     {
+          return $this->boardExecutiveRepository->all();
+     }
      public function find(string|int $id) : Model|Collection|Builder|array|null
      {
           return $this->boardExecutiveRepository->find(id: $id);

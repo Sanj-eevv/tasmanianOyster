@@ -24,7 +24,7 @@ class BaseRepository implements BaseRepositoryInterface
           return $this->model->query();
      }
 
-     public function all(): mixed
+     public function all(): Collection
      {
           return $this->model->all();
      }

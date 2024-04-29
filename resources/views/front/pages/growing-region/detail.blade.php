@@ -70,8 +70,8 @@
                     <div class="!flex flex-col items-center justify-center">
                         <img src="{{asset("storage/uploads/{$team->image}")}}" alt="{{$team->name}}"
                              class="cover-image h-[220px] w-[220px] rounded-full">
-                        <span class="team-name uppercase text-lg font-medium block mt-2">{{$team->name}}</span>
-                        <span class="role capitalize block mt-2">{{$team->role}}</span>
+                        <span class="team-name uppercase text-lg font-medium block mt-2 text-center">{{$team->name}}</span>
+                        <span class="role capitalize block mt-2 text-center">{{$team->role}}</span>
                     </div>
                 @endforeach
             </div>
@@ -111,17 +111,41 @@
                 autoplaySpeed: 800,
                 speed: 3000,
                 infinite: true,
-                slidesToShow: 3,
+                slidesToShow: 1,
                 slidesToScroll: 1,
-                centerMode: true,
+                centerMode: false,
                 autoplay: true,
                 arrows: false,
                 pauseOnHover: false,
                 dots: false,
+                mobileFirst: true,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 2,
+                        }
+                    },
+                    {
+                        breakpoint: 1536,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 3,
+                        }
+                    },
+                ]
             });
             @endif
 
-            @if(count($growingRegion->teams) > 0)
+            @if(count($growingRegion->galleries) > 0)
             $('#region-image-slider').slick({
                 autoplaySpeed: 800,
                 speed: 3000,

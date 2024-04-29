@@ -7,6 +7,7 @@ use App\Helpers\AppHelper;
 use App\Http\Controllers\Controller;
 use App\Interfaces\GalleryRepositoryInterface;
 use App\Interfaces\PeopleRepositoryInterface;
+use App\Services\Dashboard\BoardExecutiveService;
 use App\Services\Front\StoryService;
 use Illuminate\Http\Request;
 
@@ -34,7 +35,8 @@ class CorporateController extends Controller
           return view('front.pages.corporate.quality-grading');
      }
 
-     public function boardExecutive(){
-          return view('front.pages.corporate.board-executive');
+     public function boardExecutive(BoardExecutiveService $boardExecutiveService){
+          $boardExecutives = $boardExecutiveService->all();
+          return view('front.pages.corporate.board-executive')->with(['boardExecutives' => $boardExecutives]);
      }
 }

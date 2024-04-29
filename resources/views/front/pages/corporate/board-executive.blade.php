@@ -28,21 +28,24 @@
             <img src="{{Vite::asset('resources/images/front/board-executive.jpeg')}}" alt="Grading System" class="cover-image h-full w-full">
         </div>
     </div>
+    @if(count($boardExecutives) > 0)
     <div class="board-executive-teams bg-black text-white">
         <h2 class="section-title text-center !font-light">Corporate Team</h2>
         <div class="container mt-4">
             <div class="flex justify-center md:justify-between items-center gap-6 flex-wrap" id="teams-slider">
-                    <div class="!flex flex-col items-center justify-center max-w-[250px]">
-                        <img src="{{asset("storage/uploads/board-executive/board-executive-1.png")}}"
+                @foreach($boardExecutives as $boardExecutive)
+                    <div class="!flex flex-col items-center justify-center xmax-w-[250px]">
+                        <img src="{{asset("storage/uploads/$boardExecutive->image")}}" alt="{{$boardExecutive->name}}"
                              class="cover-image h-[220px] w-[220px] rounded-full">
-                        <span class="team-name uppercase text-lg font-medium block mt-2">ALEXANDER (SANDY) BEARD</span>
-                        <span class="role capitalize block mt-2">CHAIRMAN</span>
-                        <p class="text-center mt-2">B COM, MAICD, FCA
-                            Former CEO of ASX listed CVC Ltd. Chairman of ASX listed Hancock & Gore Limited, FOS Capital Ltd and Anagenics Limited. Director of ASX listed Centrepoint Alliance Limited.</p>
+                        <span class="team-name uppercase text-lg font-medium block mt-2">{{$boardExecutive->name}}</span>
+                        <span class="role capitalize block mt-2">{{$boardExecutive->role}}</span>
+                        <p class="text-center mt-2">{{$boardExecutive->description}}</p>
                     </div>
+                @endforeach
             </div>
         </div>
     </div>
+    @endif
 @endsection
 @push('scripts')
     <script>
@@ -55,18 +58,44 @@
                 backDelay: 1700,
             });
 
-            // $('#teams-slider').slick({
-            //     autoplaySpeed: 800,
-            //     speed: 3000,
-            //     infinite: true,
-            //     slidesToShow: 3,
-            //     slidesToScroll: 1,
-            //     centerMode: true,
-            //     autoplay: true,
-            //     arrows: false,
-            //     pauseOnHover: false,
-            //     dots: false,
-            // });
+            @if(count($boardExecutives) > 3)
+            $('#teams-slider').slick({
+                autoplaySpeed: 800,
+                speed: 3000,
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: false,
+                autoplay: true,
+                arrows: false,
+                pauseOnHover: false,
+                dots: false,
+                mobileFirst: true,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 2,
+                        }
+                    },
+                    {
+                        breakpoint: 1536,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 3,
+                        }
+                    },
+                ]
+            });
+            @endif
         })
     </script>
 @endpush

@@ -10,7 +10,7 @@ use Illuminate\Database\Query\Builder as DbBuilder;
 
 interface BaseRepositoryInterface
 {
-    public function all():  mixed;
+    public function all():  Collection;
 
     public function paginatedWithQuery(array $meta, $query = null);
 
