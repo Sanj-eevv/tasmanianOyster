@@ -1,4 +1,5 @@
 @extends('layouts.front.index')
+
 @push('styles')
     <style>
         .gallery-container .image-box{
@@ -28,6 +29,13 @@
             .gallery-container .image-box img{
                 height: unset;
             }
+        }
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .fade-in.active {
+            opacity: 1;
         }
     </style>
 @endpush
@@ -103,8 +111,17 @@
                         loadingBtn.find('.loading-spinner').removeClass('hidden')
                     },
                     success:function(resp){
-                        $('.gallery-container').append(resp.html);
                         loadingBtn.attr('data-page',currentPage + 1)
+                        Object.keys(resp.images).forEach(function(url) {
+                            let fileName = resp.images[url];
+                            url = "{{asset('storage/uploads')}}"+'/'+url;
+                            let img = $('<img>').attr('src', url).attr('alt', fileName).addClass('cover-image fade-in');
+                            $('.gallery-container').append(img);
+                        });
+                        setTimeout(function() {
+                            $('.fade-in').addClass('active');
+                        }, 100);
+
                         if(resp.total === 0){
                             loadingBtn.remove();
                         }

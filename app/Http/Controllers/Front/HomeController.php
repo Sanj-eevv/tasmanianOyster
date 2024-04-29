@@ -25,7 +25,7 @@ class HomeController extends Controller
           ]);
           $response = $this->galleryRepository->paginatedWithQuery($meta);
           $galleries = $response['data'];
-          $html = view('front.pages.home._partials._gallery_image', compact('galleries'))->render();
-          return response()->json(['message' => 'Success', 'html' => $html, 'total' => count($galleries)]);
+          $images = $galleries->pluck('file_name', 'file_url')->toArray();
+          return response()->json(['message' => 'Success', 'images' => $images, 'total' => count($galleries)]);
      }
 }

@@ -39,6 +39,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'au
 
 Route::group(['prefix' => 'front', 'as' => 'front.'], function(){
      Route::get('/', HomeController::class)->name('index');
+     Route::get('board-executive', [CorporateController::class, 'boardExecutive'])->name('board-executive.index');
      Route::post('contacts', [FrontContactController::class, 'store'])->name('contact.store');
      Route::get('growing-region/{slug}', [FrontGrowingRegionController::class, 'details'])->name('growing-region.details');
      Route::get('john-reserve', [JohnReserveController::class, 'index'])->name('john-reserve.index');
@@ -47,5 +48,4 @@ Route::group(['prefix' => 'front', 'as' => 'front.'], function(){
      Route::get('quality-grading', [CorporateController::class, 'qualityGrading'])->name('quality-grading.index');
      Route::get('story', StoryController::class)->name('story.index');
      Route::get('sustainability', SustainabilityController::class)->name('sustainability.index');
-
 });

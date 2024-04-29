@@ -1,9 +1,5 @@
 @push('styles')
     <style>
-            .gallery-container{
-                /*columns: 4;*/
-                /*column-gap: 20px;*/
-            }
             .gallery-container .image-box{
                 width: 100%;
                 margin-bottom: 20px;
@@ -22,17 +18,22 @@
             @media (min-width: 768px) {
                 .gallery-container{
                     columns: 3;
-                    column-gap: 20px;
                 }
             }
             @media (min-width: 1024px) {
                 .gallery-container{
                     columns: 4;
-                    column-gap: 20px;
                 }
                 .gallery-container .image-box img{
                     height: unset;
                 }
+            }
+            .fade-in {
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            }
+            .fade-in.active {
+                opacity: 1;
             }
     </style>
 @endpush
@@ -77,8 +78,17 @@
                     loadingBtn.find('.loading-spinner').removeClass('hidden')
                 },
                 success:function(resp){
-                    $('.gallery-container').append(resp.html);
                     loadingBtn.attr('data-page',currentPage + 1)
+                    Object.keys(resp.images).forEach(function(url) {
+                        let fileName = resp.images[url];
+                        url = "{{asset('storage/uploads')}}"+'/'+url;
+                        let img = $('<img>').attr('src', url).attr('alt', fileName).addClass('cover-image fade-in');
+                        $('.gallery-container').append(img);
+                    });
+                    setTimeout(function() {
+                        $('.fade-in').addClass('active');
+                    }, 100);
+
                     if(resp.total === 0){
                         loadingBtn.remove();
                     }

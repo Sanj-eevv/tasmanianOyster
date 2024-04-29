@@ -26,11 +26,15 @@ class CorporateController extends Controller
           ]);
           $response = $this->peopleRepository->paginatedWithQuery($meta);
           $galleries = $response['data'];
-          $html = view('front.pages.corporate._partials._our_people--gallery', compact('galleries'))->render();
-          return response()->json(['message' => 'Success', 'html' => $html, 'total' => count($galleries)]);
+          $images = $galleries->pluck('file_name', 'file_url')->toArray();
+          return response()->json(['message' => 'Success', 'images' => $images, 'total' => count($galleries)]);
      }
 
      public function qualityGrading(){
           return view('front.pages.corporate.quality-grading');
+     }
+
+     public function boardExecutive(){
+          return view('front.pages.corporate.board-executive');
      }
 }
