@@ -44,6 +44,7 @@ Route::group(['prefix' => 'front', 'as' => 'front.'], function(){
      Route::get('board-executive', [CorporateController::class, 'boardExecutive'])->name('board-executive.index');
      Route::post('contacts', [FrontContactController::class, 'store'])->name('contact.store');
      Route::get('growing-region/{slug}', [FrontGrowingRegionController::class, 'details'])->name('growing-region.details');
+     Route::get('investors', [CorporateController::class, 'investors'])->name('investors.index');
      Route::get('john-reserve', [JohnReserveController::class, 'index'])->name('john-reserve.index');
      Route::get('john-reserve/{slug}', [JohnReserveController::class, 'details'])->name('john-reserve.details');
      Route::get('our-people', [CorporateController::class, 'ourPeople'])->name('our-people.index');
