@@ -7,6 +7,7 @@ use App\Helpers\AppHelper;
 use App\Http\Controllers\Controller;
 use App\Interfaces\PeopleRepositoryInterface;
 use App\Services\Dashboard\BoardExecutiveService;
+use App\Services\Dashboard\PublicationService;
 use Illuminate\Http\Request;
 
 class CorporateController extends Controller
@@ -42,7 +43,8 @@ class CorporateController extends Controller
           return view('front.pages.corporate.investors');
      }
 
-     public function publications(){
-          return view('front.pages.corporate.publications');
+     public function publications(PublicationService $publicationService){
+          $publications = $publicationService->all()->groupBy('type');
+          return view('front.pages.corporate.publications')->with(['publications' => $publications]);
      }
 }

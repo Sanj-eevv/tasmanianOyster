@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
               TeamSeeder::class,
               GrowingRegionGallerySeeder::class,
               PeopleSeeder::class,
-              BoardExecutiveSeeder::class
+              BoardExecutiveSeeder::class,
+              PublicationSeeder::class
          ]);
     }
 }

@@ -16,7 +16,7 @@ class PublicationResource extends JsonResource
          return [
               'id'         => $this->id,
               'name'       => ucwords($this->name),
-              'type'       => $this->type,
+              'type'       => ucwords(strtolower(str_replace(['_', '-'], [' ', ' '], $this->type->name))),
               'created_at' => Carbon::parse($this->created_at)->format('m-d-Y'),
               'action'     => View::make('dashboard.publications._action')->with('r', $this)->render(),
          ];

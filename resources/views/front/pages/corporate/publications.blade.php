@@ -21,30 +21,23 @@
                 Click on the buttons below to view.
             </div>
             <div class="flex gap-8 flex-wrap justify-center lg:justify-between">
-                <div class="w-full xsm:w-fit " data-aos="fade-up" data-aos-duration="1800">
-                    <h2 class="section-title capitalize !pb-1 !font-medium">Annual Reports</h2>
-                    <div class="flex flex-col gap-3">
-                        <button class="px-12 py-3 border border-white relative transition duration-300 hover:bg-white hover:text-black text-center min-w-[180px]">2018 Financial Reports</button>
-                        <button class="px-12 py-3 border border-white relative transition duration-300 hover:bg-white hover:text-black text-center min-w-[180px]">2018 Financial Reports</button>
-                        <button class="px-12 py-3 border border-white relative transition duration-300 hover:bg-white hover:text-black text-center min-w-[180px]">2018 Reports</button>
+                <?php
+                    $aosDuration = 1800
+                ?>
+                @forelse($publications as $publicationType => $publicationLists)
+                    <div class="w-full xsm:w-fit " data-aos="fade-up" data-aos-duration="{{$aosDuration}}">
+                        <h2 class="section-title capitalize !pb-1 !font-medium">{{ucwords(strtolower(str_replace(['_', '-'], [' ', ' '], $publicationType)))}}</h2>
+                        <div class="flex flex-col gap-3">
+                        @foreach($publicationLists as $publication)
+                                <a target="_blank" href="{{asset("storage/uploads/$publication->file_url")}}" class="px-12 py-3 border border-white relative transition duration-300 hover:bg-white hover:text-black text-center min-w-[180px] capitalize">{{$publication->name}}</a>
+                        @endforeach
+                        </div>
                     </div>
-                </div>
-                <div class="w-full xsm:w-fit" data-aos="fade-up" data-aos-duration="2100">
-                    <h2 class="section-title capitalize !pb-1 !font-medium">Company Updates</h2>
-                    <div class="flex flex-col gap-3">
-                        <button class="px-12 py-3 border border-white relative transition duration-300 hover:bg-white hover:text-black text-center min-w-[180px]">Autumn 2020</button>
-                        <button class="px-12 py-3 border border-white relative transition duration-300 hover:bg-white hover:text-black text-center min-w-[180px]">Autumn 2020</button>
-                        <button class="px-12 py-3 border border-white relative transition duration-300 hover:bg-white hover:text-black text-center min-w-[180px]">Autumn 2020</button>
-                    </div>
-                </div>
-                <div class="w-full xsm:w-fit" data-aos="fade-up" data-aos-duration="2400">
-                    <h2 class="section-title capitalize !pb-1 !font-medium">Policies & Procedures</h2>
-                    <div class="flex flex-col gap-3">
-                        <button class="px-12 py-3 border border-white relative transition duration-300 hover:bg-white hover:text-black text-center min-w-[180px]">Privacy and Policy</button>
-                        <button class="px-12 py-3 border border-white relative transition duration-300 hover:bg-white hover:text-black text-center min-w-[180px]">2018 Financial Reports</button>
-                        <button class="px-12 py-3 border border-white relative transition duration-300 hover:bg-white hover:text-black text-center min-w-[180px]">2018 Financial Reports</button>
-                    </div>
-                </div>
+                   <?php
+                    $aosDuration = $aosDuration + 300
+                   ?>
+                @empty
+                @endforelse
             </div>
         </div>
     </div>
