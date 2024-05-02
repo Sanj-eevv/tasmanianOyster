@@ -8,6 +8,31 @@
         .detail-page-href:hover svg{
             fill: #000;
         }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .fade-out {
+            animation: fadeOut 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
     </style>
 @endpush
 @section('content')
@@ -27,9 +52,14 @@
     <div class="story-section bg-black py-12">
         <div class="container">
             <h1 class="section-title text-white text-center !pt-0" data-aos="fade-up" data-aos-duration="1500">{{config('app.name')}}</h1>
+            <div class="text-right mb-8">
+                <label for="searchInput" class="">
+                    <input id="searchInput" class="outline-none py-1 px-2 rounded-md" placeholder="Search..." autocomplete="off">
+                </label>
+            </div>
             <div class="grid grid-cols-4">
                 @forelse($johnReserves as $johnReserve)
-                    <div style="background-image: url('{{asset("storage/uploads/$johnReserve->hero_image")}}'); background-repeat: no-repeat" class="bg-cover bg-center h-[350px] w-full relative">
+                    <div style="background-image: url('{{asset("storage/uploads/$johnReserve->hero_image")}}'); background-repeat: no-repeat" class="bg-cover bg-center h-[350px] w-full relative order-item fade-in" data-title="{{$johnReserve->title}}">
                         <div class="overlay"></div>
                         <div class="flex justify-center align-items-center flex-col gap-3 relative h-full">
                             <h2 class="font-medium text-2xl text-white mx-auto tracking-wide flex gap-2">
@@ -63,6 +93,28 @@
                 showCursor: false,
                 loop: true,
                 backDelay: 1700,
+            });
+
+            document.getElementById('searchInput').addEventListener('input', function () {
+                let searchTerm = this.value.toLowerCase();
+                let cards = document.querySelectorAll('.order-item');
+
+                cards.forEach(function (card) {
+                    let title = card.dataset.title.toLowerCase();
+                    if (title.includes(searchTerm)) {
+                        if (card.classList.contains('fade-out')) {
+                            card.classList.remove('fade-out');
+                        }
+                        card.classList.add('fade-in');
+                        card.style.display = 'block';
+                    } else {
+                        if (card.classList.contains('fade-in')) {
+                            card.classList.remove('fade-in');
+                        }
+                        card.classList.add('fade-out');
+                        card.style.display = 'none';
+                    }
+                });
             });
         })
     </script>
