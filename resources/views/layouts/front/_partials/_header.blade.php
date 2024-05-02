@@ -39,6 +39,7 @@
                         </ul>
                     </div>
                 </li>
+                <li><a href="{{route('front.order.index')}}" class="font-medium pb-[10px]">SHOP NOW</a></li>
                 <li><a href="{{route('front.story.index')}}" class="font-medium pb-[10px]">OUR STORY</a></li>
                 <li><a href="{{route('front.sustainability.index')}}" class="font-medium pb-[10px]">SUSTAINABILITY</a></li>
                 @auth
