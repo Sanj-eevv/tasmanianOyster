@@ -19,6 +19,7 @@ use App\Http\Controllers\Front\OrderController;
 use App\Http\Controllers\Front\StoryController;
 use App\Http\Controllers\Front\SustainabilityController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Dashboard\OrderController as DashboardOrderController;
 
 
 Route::get('/', HomeController::class)->name('front.index');
@@ -33,6 +34,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'au
      Route::resource('galleries', GalleryController::class)->only('index', 'store', 'destroy');
      Route::resource('growing-regions', GrowingRegionController::class)->except('show');
      Route::resource('john-reserve', DashboardJohnReserveController::class);
+     Route::resource('orders', DashboardOrderController::class)->only('index', 'show', 'destroy');
      Route::resource('people', PeopleController::class);
      Route::resource('publications', PublicationController::class);
      Route::resource('settings', SettingController::class)->only('index', 'store');

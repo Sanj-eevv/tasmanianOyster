@@ -121,6 +121,7 @@
                     success: function (resp) {
                         toastr.success(resp.message);
                         $('#order-form').trigger('reset');
+                        $(".invalid-feedback").text("");
                         modal.hide();
                     },
                     error: function (xhr) {

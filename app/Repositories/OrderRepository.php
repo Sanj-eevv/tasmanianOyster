@@ -20,14 +20,16 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
 
     public function paginatedWithQuery(array $meta, $query = null ): array
     {
-       /* $query = $this->model::query()
-             ->select('id', 'full_name', 'phone_number', 'email', 'created_at')
-             ->where('full_name', 'like', $meta['search'] . '%')
-             ->orWhere('phone_number', 'like', $meta['search'] . '%')
-             ->orWhere('email', 'like', $meta['search'] . '%')
-             ->orWhere('created_at', 'like', $meta['search'] . '%');
+        $query = $this->model::query()
+             ->select('orders.id', 'email', 'quantity', 'title', 'orders.created_at', 'j.title')
+             ->join('john_reserves as j', 'j.id', 'orders.john_reserve_id')
+             ->where('orders.id', 'like', $meta['search'].'%')
+             ->orWhere('email', 'like', $meta['search'].'%')
+             ->orWhere('quantity', 'like', $meta['search'].'%')
+             ->orWhere('j.title', 'like', $meta['search'].'%')
+             ->orWhere('orders.created_at', 'like', $meta['search'].'%');
 
-        return $this->offsetAndSort($meta, $query);*/
+        return $this->offsetAndSort($meta, $query);
     }
 
 

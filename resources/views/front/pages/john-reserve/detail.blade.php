@@ -40,6 +40,16 @@
                     <p class="tracking-wide font-extralight leading-8 text-justify" data-aos="fade-up" data-aos-duration="2000">
                         {{$johnReserve->description}}
                     </p>
+                    <a href="javascript:void(0)"
+                       data-id="{{$johnReserve->id}}"
+                       data-title="{{$johnReserve->title}}"
+                       data-umami="{{$johnReserve->umami}}"
+                       data-saltiness="{{$johnReserve->saltiness}}"
+                       data-texture="{{$johnReserve->texture}}"
+                       data-finish="{{$johnReserve->finish}}"
+                       class="block border border-white p-3 flex justify-center items-center w-fit text-white min-w-[250px] transition duration-500 hover:text-black hover:bg-white buy-now mt-2">
+                        BUY NOW
+                    </a>
                 </div>
             </div>
         </div>
@@ -74,4 +84,5 @@
            ])
          </div>
     </div>
+    @include('front.pages.order._partials._order_modal')
 @endsection

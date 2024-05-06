@@ -121,6 +121,20 @@
                 </div>
                 <!--end:Menu item-->
 
+
+                <!--begin:Menu item-->
+                <div class="menu-item">
+                    <!--begin:Menu link-->
+                    <a class="menu-link {{current_page('orders') ? 'active' : '' }}" href="{{ route('dashboard.orders.index') }}">
+                         <span class="menu-icon">
+                           <i class="fas fa-shopping-cart"></i>
+                        </span>
+                        <span class="menu-title">Orders</span>
+                    </a>
+                    <!--end:Menu link-->
+                </div>
+                <!--end:Menu item-->
+
                 <!--begin:Menu item-->
                 <div class="menu-item">
                     <!--begin:Menu link-->
