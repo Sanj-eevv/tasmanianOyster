@@ -40,10 +40,13 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'au
 
 });
 
+
+
 Route::group(['prefix' => 'front', 'as' => 'front.'], function(){
      Route::get('/', HomeController::class)->name('index');
      Route::get('board-executive', [CorporateController::class, 'boardExecutive'])->name('board-executive.index');
      Route::get('buy-now', [OrderController::class, 'index'])->name('order.index');
+     Route::post('buy-now', [OrderController::class, 'store'])->name('order.store');
      Route::post('contacts', [FrontContactController::class, 'store'])->name('contact.store');
      Route::get('growing-region/{slug}', [FrontGrowingRegionController::class, 'details'])->name('growing-region.details');
      Route::get('investors', [CorporateController::class, 'investors'])->name('investor.index');

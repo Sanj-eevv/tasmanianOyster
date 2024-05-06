@@ -73,7 +73,13 @@
                                 </svg>
                             </a>
                             <a href="javascript:void(0)"
-                               class="block border border-white p-3 flex justify-center items-center w-fit text-white mx-auto min-w-[250px] transition duration-500 hover:text-black hover:bg-white">
+                               data-id="{{$johnReserve->id}}"
+                               data-title="{{$johnReserve->title}}"
+                               data-umami="{{$johnReserve->umami}}"
+                               data-saltiness="{{$johnReserve->saltiness}}"
+                               data-texture="{{$johnReserve->texture}}"
+                               data-finish="{{$johnReserve->finish}}"
+                               class="block border border-white p-3 flex justify-center items-center w-fit text-white mx-auto min-w-[250px] transition duration-500 hover:text-black hover:bg-white buy-now">
                                 BUY NOW
                             </a>
                         </div>
@@ -81,12 +87,14 @@
                 @empty
                 @endforelse
             </div>
+
         </div>
     </div>
+    @include('front.pages.order._partials._order_modal')
 @endsection
 @push('scripts')
     <script>
-        $(document).ready(function (){
+        $(document).ready(function () {
             new Typed('#shop_now_title', {
                 strings: ['Shop Now.'],
                 typeSpeed: 100,
@@ -116,6 +124,7 @@
                     }
                 });
             });
-        })
+
+        });
     </script>
 @endpush

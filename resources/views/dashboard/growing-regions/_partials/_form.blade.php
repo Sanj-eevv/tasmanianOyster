@@ -187,7 +187,7 @@
                             alertifySuccessAndRedirect(resp.message, resp.redirectUrl);
                     },
                     error: function(xhr){
-                        if(xhr.status){
+                        if(xhr.status === 422){
                             const errors = xhr.responseJSON.errors;
                             showAjaxErrorsOnFormsWithRepeater(errors, 'growing_region_form');
                             if(errors && Object.keys(errors).length > 0){
