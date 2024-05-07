@@ -24,7 +24,6 @@ class OrderReceivedMail extends Mailable implements ShouldQueue
     public function envelope(): Envelope
     {
         return new Envelope(
-             from: new Address(config('app.admin.email'), config('app.name')),
              subject: 'New Order Received',
         );
     }
