@@ -35,6 +35,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'au
      Route::resource('growing-regions', GrowingRegionController::class)->except('show');
      Route::resource('john-reserve', DashboardJohnReserveController::class);
      Route::resource('orders', DashboardOrderController::class)->only('index', 'show', 'destroy');
+     Route::get('order/{order}/generate-pdf', [DashboardOrderController::class, 'generatePDf'])->name('orders.generate-pdf');
      Route::resource('people', PeopleController::class);
      Route::resource('publications', PublicationController::class);
      Route::resource('settings', SettingController::class)->only('index', 'store');

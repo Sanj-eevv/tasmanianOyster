@@ -17,6 +17,9 @@
                     <a href="{{route('dashboard.orders.index')}}" class="btn btn-light-dark btn-sm me-2">
                         Back
                     </a>
+                    <a href="{{route('dashboard.orders.generate-pdf', $order->id)}}" class="btn btn-light-primary btn-sm me-2">
+                        Generate PDF
+                    </a>
                     <button class="btn btn-icon btn-light-youtube btn-sm" onclick="confirmDelete(() => {deleteDatatableRecord('orderDatatable', {{$order->id}}, '{{route('dashboard.orders.destroy',$order->id)}}', '{{route('dashboard.orders.index')}}')})"  title="{{ __('Destroy') }}"><i class="fas fa-trash"></i></button>
                 </div>
                 <!--end::Toolbar-->

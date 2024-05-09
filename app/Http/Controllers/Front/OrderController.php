@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Front\OrderRequest;
 use App\Interfaces\OrderRepositoryInterface;
 use App\Models\JohnReserve;
+use App\Models\Order;
+use Illuminate\Support\Carbon;
+use function Spatie\LaravelPdf\Support\pdf;
 
 class OrderController extends Controller
 {

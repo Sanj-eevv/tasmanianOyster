@@ -9,6 +9,8 @@ use App\Http\Resources\Order\OrderResource;
 use App\Interfaces\OrderRepositoryInterface;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use function Spatie\LaravelPdf\Support\pdf;
 
 class OrderController extends Controller
 {
@@ -48,5 +50,12 @@ class OrderController extends Controller
           return response()->json([
                'message' => 'Order Successfully Deleted',
           ]);
+     }
+     public function generatePDf(Order $order){
+          $name = "invoice-{$order->getAttribute('id')}".Carbon::now()->format('Y-m-d').".pdf";
+          return pdf()
+               ->view('mails.order-created', ['order' => $order])
+               ->name($name)
+               ->download();
      }
 }
