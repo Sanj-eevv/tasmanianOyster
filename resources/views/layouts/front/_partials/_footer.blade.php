@@ -7,8 +7,10 @@
                     <span class="block font-extralight mt-3">{{config('app.settings.company_email')}}</span>
                 </div>
                 <div>
-                    <img src="{{asset("storage/uploads/".config('app.settings.app_logo'))}}" alt="logo"
-                         class="h-[130px] w-[130px] cover-image">
+                    <a href="{{route('front.index')}}">
+                        <img src="{{asset("storage/uploads/".config('app.settings.app_logo'))}}" alt="logo"
+                             class="h-[130px] w-[130px] cover-image">
+                    </a>
                 </div>
                 <div class="flex gap-8">
                         @if(config('app.settings.instagram_url'))

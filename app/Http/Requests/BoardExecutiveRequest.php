@@ -20,7 +20,7 @@ class BoardExecutiveRequest extends FormRequest
              'name'        => ['required', 'string', 'max:191'],
              'role'        => ['required', 'string', 'max:191'],
              'description' => ['nullable', 'string'],
-             'image'       => ['required_without:image_old', 'image', 'mimes:jpeg,png,jpg,svg,webp', 'max:2048'],
+             'image'       => ['required_without:image_old', 'image', 'mimes:jpeg,png,jpg,svg,webp', 'max:10240'],
         ];
     }
 

@@ -10,7 +10,7 @@ return [
      'about'  => [
           'heading'       => 'ABOUT US',
           'sub_heading'   => 'TASMANIAN OYSTER CO.',
-          'description'   => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          'description'   => "Tasmanian Oyster Co was founded in 1979, as Shellfish Culture Ltd, and has merged with multiple world class oyster farming operations to form Australia's largest vertically integrated Oyster business. Our vision is to be a world class shellfish company.",
           'button_text'   => 'View More',
           'button_link'   => '/front/story',
           'image_src_one' => 'resources/images/front/about-us-1.png',

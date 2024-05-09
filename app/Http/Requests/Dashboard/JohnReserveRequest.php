@@ -24,7 +24,7 @@ class JohnReserveRequest extends FormRequest
          return[
               'title'       => ['required', 'string', 'max:191',  Rule::unique('john_reserves')->ignore($request->route('john_reserve'))],
               'description' => ['required', 'string', 'min:100', 'max:500'],
-              'hero_image'  => ['required_without:hero_image_old', 'image', 'mimes:jpeg,png,jpg,svg,webp', 'max:2048'],
+              'hero_image'  => ['required_without:hero_image_old', 'image', 'mimes:jpeg,png,jpg,svg,webp', 'max:10240'],
               'umami'       => ['required', 'numeric', 'min:0.1', 'max:5'],
               'saltiness'   => ['required', 'numeric', 'min:0.1', 'max:5'],
               'texture'     => ['required', 'numeric', 'min:0.1', 'max:5'],

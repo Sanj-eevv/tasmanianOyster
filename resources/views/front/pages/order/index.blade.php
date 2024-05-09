@@ -57,9 +57,9 @@
                     <input id="searchInput" class="outline-none py-1 px-2 rounded-md" placeholder="Search..." autocomplete="off">
                 </label>
             </div>
-            <div class="grid grid-cols-4">
+            <div class="grid grid-cols-1 xsm:grid-cols-2 md:grid-cols-3">
                 @forelse($johnReserves as $johnReserve)
-                    <div style="background-image: url('{{asset("storage/uploads/$johnReserve->hero_image")}}'); background-repeat: no-repeat" class="bg-cover bg-center h-[350px] w-full relative order-item fade-in" data-title="{{$johnReserve->title}}">
+                    <div style="background-image: url('{{asset("storage/uploads/$johnReserve->hero_image")}}'); background-repeat: no-repeat" class="bg-cover bg-center h-[350px] xsm:h-[280px] sm:h-[350px] lg:h-[350px] w-full relative order-item fade-in" data-title="{{$johnReserve->title}}">
                         <div class="overlay"></div>
                         <div class="flex justify-center align-items-center flex-col gap-3 relative h-full">
                             <h2 class="font-medium text-2xl text-white mx-auto tracking-wide flex gap-2">
@@ -79,7 +79,7 @@
                                data-saltiness="{{$johnReserve->saltiness}}"
                                data-texture="{{$johnReserve->texture}}"
                                data-finish="{{$johnReserve->finish}}"
-                               class="block border border-white p-3 flex justify-center items-center w-fit text-white mx-auto min-w-[250px] transition duration-500 hover:text-black hover:bg-white buy-now">
+                               class="block border border-white p-3 flex justify-center items-center w-fit text-white mx-auto min-w-[200px] lg:min-w-[250px] transition duration-500 hover:text-black hover:bg-white buy-now">
                                 BUY NOW
                             </a>
                         </div>
