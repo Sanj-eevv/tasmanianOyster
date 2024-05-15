@@ -49,7 +49,9 @@
                         <img src="{{Vite::asset('resources/images/front/john-info.png')}}" alt="john info one" class="h-[400px] cover-image w-full">
                     </div>
                     <div class="sm:basis-1/2 flex items-center">
-                        <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500.</p>
+                        <p class="text-justify">
+                            I've sold cars & real estate, harvested vegetables, owned a service station and a men's wear store. I'm a boiler-maker-welder by trade and I've built and raced speedway cars . . . . but none of that comes close to the excitement and challenge of nurturing the perfect oyster in the bone-snapping cold, wet and wild waters of Tasmania.
+                        </p>
                     </div>
                 </div>
                 <div class="flex gap-[60px] pb-[60px] flex-col md:flex-row-reverse" data-aos="fade-left" data-aos-duration="2000">
@@ -57,7 +59,10 @@
                         <img src="{{Vite::asset('resources/images/front/john-info-2.png')}}" alt="john info two"  class="h-[400px] cover-image w-full">
                     </div>
                     <div class="sm:basis-1/2 flex items-center">
-                        <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500.</p>
+                        <p class="text-justify">
+
+                            I've been patiently developing a unique farming technique; I've failed more often than I care to remember and after some 30 odd years of blood, sweat and tears, I've finally nailed it. The hard-fought knowledge and meticulous craftsmanship invested, and the precious, exclusive provenance of these oysters is the culmination of my life's work.
+                        </p>
                     </div>
                 </div>
             </div>
